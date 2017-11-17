@@ -1,0 +1,35 @@
+rewrite ^/(.*)\.(asp|aspx|asa|asax|dll|jsp|cgi|fcgi|pl)(.*)$ /404.htm last;
+
+rewrite ^/admin/(.*).html$ /index.php/admin/$1 last;
+rewrite ^/admin/(.*)$ /index.php/admin/$1 last;
+
+rewrite ^/m/$ /index.php/wap/index/index last;
+rewrite ^/m/(.*)_(.*)/(.*)_(.*).html$ /index.php/wap/show/index?etitle=$3&area=$1&cw=$4 last;
+rewrite ^/m/(.*)_(.*)/(.*).html$ /index.php/wap/show/index?etitle=$3&area=$1 last;
+rewrite ^/m/search/$ /index.php/wap/search/index last;
+rewrite ^/m/(.*)_tag/(.*)$ /index.php/wap/tag/index?title=$2&area=$1 last;
+rewrite ^/m/tag/(.*)$ /index.php/wap/tag/index?title=$1 last;
+rewrite ^/m/(.*)_search/$ /index.php/wap/search/index?area=$1 last;
+rewrite ^/m/(.*)/(.*)_(.*).html$ /index.php/wap/show/index?etitle=$2&cw=$3 last;
+rewrite ^/m/(.*)/(.*).html$ /index.php/wap/show/index?etitle=$2 last;
+rewrite ^/m/(.*)_(.*)/$ /index.php/wap/category/index?ctitle=$2&area=$1 last;
+rewrite ^/m/(.*)_(.*)/page/(.*)$ /index.php/wap/category/index?ctitle=$2&area=$1&page=$3 last;
+rewrite ^/m/(.*)/$ /index.php/wap/category/index?ctitle=$1 last;
+rewrite ^/m/(.*)/page/(.*)$ /index.php/wap/category/index?ctitle=$1&page=$2 last;
+rewrite ^/m/(.*).html$ /index.php/wap/index/index?area=$1 last;
+
+rewrite ^/statics/ueditor/dialogs/(.*)/(.*).html$ /statics/ueditor/dialogs/$1/$2.html last;
+rewrite ^/index(.*)/$ /index.php/index/index/index/$1 last;
+rewrite ^/(.*)_(.*)/(.*)_(.*).html$ /index.php/index/show/index?etitle=$3&area=$1&cw=$4 last;
+rewrite ^/(.*)_(.*)/(.*).html$ /index.php/index/show/index?etitle=$3&area=$1 last;
+rewrite ^/search/$ /index.php/index/search/index last;
+rewrite ^/(.*)_search/$ /index.php/index/search/index?area=$1 last;
+rewrite ^/(.*)_tag/(.*)$ /index.php/index/tag/index?title=$2&area=$1 last;
+rewrite ^/tag/(.*)$ /index.php/index/tag/index?title=$1 last;
+rewrite ^/(.*)/(.*)_(.*).html$ /index.php/index/show/index?etitle=$2&cw=$3 last;
+rewrite ^/(.*)/(.*).html$ /index.php/index/show/index?etitle=$2 last;
+rewrite ^/(.*)_(.*)/$ /index.php/index/category/index?ctitle=$2&area=$1 last;
+rewrite ^/(.*)_(.*)/page/(.*)$ /index.php/index/category/index?ctitle=$2&area=$1&page=$3 last;
+rewrite ^/(.*)/$ /index.php/index/category/index?ctitle=$1 last;
+rewrite ^/(.*)/page/(.*)$ /index.php/index/category/index?ctitle=$1&page=$2 last;
+rewrite ^/(.*).html$ /index.php/index/index/index?area=$1 last;

@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  	Options +FollowSymlinks -Multiviews
+  	ErrorDocument 404 /404.htm
+  	RewriteEngine On
+
+  	RewriteCond %{REQUEST_FILENAME} !-d
+  	RewriteCond %{REQUEST_FILENAME} !-f
+
+#	RewriteRule ^(.*)\.(asp|aspx|asa|asax|dll|jsp|cgi|fcgi|pl)(.*)$ /404.htm
+
+	RewriteRule ^(.*)$ index.php?/$1 [QSA,PT,L]
+</IfModule>
