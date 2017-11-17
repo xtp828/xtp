@@ -42962,3 +42962,2987 @@
 [ info ] [ DB ] INIT mysql
 [ info ] [ LOG ] INIT File
 [ error ] [1049]SQLSTATE[HY000] [1049] Unknown database 'yunucms'[F:\ddhz\ddhz-admin\xtp\system\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-11-17T21:47:33+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/login
+[ info ] www.ddhz.com/admin/index/login [运行时间：0.046002s][吞吐率：21.74req/s] [内存消耗：1,110.95kb] [文件加载：37]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/login' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Index->login[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Index.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\index\login.html [ array (
+  0 => 'admintitle',
+  1 => 'position',
+  2 => 'version',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:47:40+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/dologin?username=admin&password=admin
+[ info ] www.ddhz.com/admin/index/dologin?username=admin&password=admin [运行时间：0.192011s][吞吐率：5.21req/s] [内存消耗：2,162.40kb] [文件加载：50]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/index/login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/dologin' => '',
+  'username' => 'admin',
+  'password' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Index->doLogin[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:47:42+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/index
+[ info ] www.ddhz.com/admin/index/index [运行时间：0.245014s][吞吐率：4.08req/s] [内存消耗：2,200.77kb] [文件加载：50]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/index/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Index.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\index\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'content_count',
+  8 => 'category_count',
+  9 => 'admin_count',
+  10 => 'daycount',
+  11 => 'sys_os',
+  12 => 'sys_ser',
+  13 => 'sys_mysql',
+  14 => 'sys_upfile',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:47:49+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/client/index
+[ info ] www.ddhz.com/admin/client/index [运行时间：0.211012s][吞吐率：4.74req/s] [内存消耗：2,316.52kb] [文件加载：54]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'client',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/client/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Client->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Client.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\client\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'source',
+  8 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:47:51+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/product/index
+[ info ] www.ddhz.com/admin/product/index [运行时间：0.221013s][吞吐率：4.52req/s] [内存消耗：2,457.19kb] [文件加载：55]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/client/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/product/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Product->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Product.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'type',
+  8 => 'status',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:47:52+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/house
+[ info ] www.ddhz.com/admin/box/house [运行时间：0.246014s][吞吐率：4.06req/s] [内存消耗：2,469.87kb] [文件加载：55]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'house',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/product/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/house' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->house[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\house.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'status',
+  8 => 'curr_pca',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:00+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/index
+[ info ] www.ddhz.com/admin/box/index [运行时间：0.359021s][吞吐率：2.79req/s] [内存消耗：2,473.80kb] [文件加载：55]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/house',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'status',
+  8 => 'content',
+  9 => 'curr_pca',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:01+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/house
+[ info ] www.ddhz.com/admin/box/house [运行时间：0.237014s][吞吐率：4.22req/s] [内存消耗：2,338.40kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'house',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/house' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->house[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\house.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'status',
+  8 => 'curr_pca',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:02+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/index
+[ info ] www.ddhz.com/admin/box/index [运行时间：0.216012s][吞吐率：4.63req/s] [内存消耗：2,340.16kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/house',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'status',
+  8 => 'content',
+  9 => 'curr_pca',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/editbox?id=1
+[ info ] www.ddhz.com/admin/box/editbox?id=1 [运行时间：0.215013s][吞吐率：4.65req/s] [内存消耗：2,249.49kb] [文件加载：51]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'editbox',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/editbox' => '',
+  'id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->editBox[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\editbox.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:17+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/souhouse
+[ info ] www.ddhz.com/admin/box/souhouse [运行时间：0.251014s][吞吐率：3.98req/s] [内存消耗：2,458.86kb] [文件加载：55]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'souhouse',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/editbox?id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/souhouse' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->souHouse[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\souhouse.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'curr_pca',
+  8 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:22+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/box/editbox
+[ info ] www.ddhz.com/admin/box/editbox [运行时间：0.202012s][吞吐率：4.95req/s] [内存消耗：2,314.15kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'editbox',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ddhz.com/admin/box/editbox?id=1',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ddhz.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '70',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/editbox' => '',
+  'id' => '1',
+  'number_no' => '10001',
+  'floors' => '5',
+  'status' => 'on',
+  'submit_type' => 'edit',
+  'building_id' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->editBox[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:24+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/index
+[ info ] www.ddhz.com/admin/box/index [运行时间：0.196012s][吞吐率：5.10req/s] [内存消耗：2,340.09kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/editbox?id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'status',
+  8 => 'content',
+  9 => 'curr_pca',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/index?page=3
+[ info ] www.ddhz.com/admin/box/index?page=3 [运行时间：0.245014s][吞吐率：4.08req/s] [内存消耗：2,340.41kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/index' => '',
+  'page' => '3',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'status',
+  8 => 'content',
+  9 => 'curr_pca',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/index?page=2
+[ info ] www.ddhz.com/admin/box/index?page=2 [运行时间：0.228013s][吞吐率：4.39req/s] [内存消耗：2,340.38kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/index?page=3',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/index' => '',
+  'page' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'status',
+  8 => 'content',
+  9 => 'curr_pca',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:37+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/index?page=4
+[ info ] www.ddhz.com/admin/box/index?page=4 [运行时间：0.308018s][吞吐率：3.25req/s] [内存消耗：2,340.30kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/index?page=2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/index' => '',
+  'page' => '4',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'status',
+  8 => 'content',
+  9 => 'curr_pca',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:38+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/index?page=3
+[ info ] www.ddhz.com/admin/box/index?page=3 [运行时间：0.215012s][吞吐率：4.65req/s] [内存消耗：2,340.38kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/index?page=4',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/index' => '',
+  'page' => '3',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'status',
+  8 => 'content',
+  9 => 'curr_pca',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:39+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/index?page=2
+[ info ] www.ddhz.com/admin/box/index?page=2 [运行时间：0.228013s][吞吐率：4.39req/s] [内存消耗：2,340.38kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/index?page=3',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/index' => '',
+  'page' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'status',
+  8 => 'content',
+  9 => 'curr_pca',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:40+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/index?page=1
+[ info ] www.ddhz.com/admin/box/index?page=1 [运行时间：0.214013s][吞吐率：4.67req/s] [内存消耗：2,340.40kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/index?page=2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/index' => '',
+  'page' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'status',
+  8 => 'content',
+  9 => 'curr_pca',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:43+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/house
+[ info ] www.ddhz.com/admin/box/house [运行时间：0.208012s][吞吐率：4.81req/s] [内存消耗：2,338.41kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'house',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/index?page=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/house' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->house[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\house.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'status',
+  8 => 'curr_pca',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:47+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/editproduct?id=1
+[ info ] www.ddhz.com/admin/box/editproduct?id=1 [运行时间：0.161010s][吞吐率：6.21req/s] [内存消耗：2,092.23kb] [文件加载：50]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'editproduct',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/house',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/editproduct' => '',
+  'id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:49+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/house
+[ info ] www.ddhz.com/admin/box/house [运行时间：0.219013s][吞吐率：4.57req/s] [内存消耗：2,338.41kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'house',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/index?page=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/house' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->house[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\house.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'status',
+  8 => 'curr_pca',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:50+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/addproduct
+[ info ] www.ddhz.com/admin/box/addproduct [运行时间：0.159010s][吞吐率：6.29req/s] [内存消耗：2,092.07kb] [文件加载：50]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'addproduct',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/house',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/addproduct' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:52+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/box/house
+[ info ] www.ddhz.com/admin/box/house [运行时间：0.213012s][吞吐率：4.69req/s] [内存消耗：2,338.41kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'box',
+    2 => 'house',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/index?page=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/box/house' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Box->house[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Box.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\box\house.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'status',
+  8 => 'curr_pca',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:53+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/client/index
+[ info ] www.ddhz.com/admin/client/index [运行时间：0.219013s][吞吐率：4.57req/s] [内存消耗：2,184.90kb] [文件加载：52]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'client',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/box/house',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/client/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Client->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Client.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\client\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'source',
+  8 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:56+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/client/delclient
+[ info ] www.ddhz.com/admin/client/delclient [运行时间：0.196011s][吞吐率：5.10req/s] [内存消耗：2,156.74kb] [文件加载：52]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'client',
+    2 => 'delclient',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ddhz.com/admin/client/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ddhz.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '14',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/client/delclient' => '',
+  'ids' => '1',
+  'status' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Client->delClient[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Client.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:48:59+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/client/delclient
+[ info ] www.ddhz.com/admin/client/delclient [运行时间：0.194011s][吞吐率：5.15req/s] [内存消耗：2,156.74kb] [文件加载：52]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'client',
+    2 => 'delclient',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ddhz.com/admin/client/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ddhz.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '14',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/client/delclient' => '',
+  'ids' => '1',
+  'status' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Client->delClient[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Client.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:49:02+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/menu/index
+[ info ] www.ddhz.com/admin/menu/index [运行时间：0.246014s][吞吐率：4.06req/s] [内存消耗：2,413.39kb] [文件加载：52]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/client/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/menu/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Menu->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Menu.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\menu\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'infolist',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:49:05+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/log/index
+[ info ] www.ddhz.com/admin/log/index [运行时间：0.203012s][吞吐率：4.93req/s] [内存消耗：2,224.94kb] [文件加载：51]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/menu/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/log/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Log.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\log\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'Nowpage',
+  8 => 'allpage',
+  9 => 'count',
+  10 => 'search_user',
+  11 => 'val',
+  12 => 'cs',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:49:06+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/log/index?page=1&cs=22&l=56
+[ info ] www.ddhz.com/admin/log/index?page=1&cs=22&l=56 [运行时间：0.199011s][吞吐率：5.02req/s] [内存消耗：2,100.97kb] [文件加载：49]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/log/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/log/index' => '',
+  'page' => '1',
+  'cs' => '22',
+  'l' => '56',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Log.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:49:08+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/log/index?page=2&cs=22&l=56
+[ info ] www.ddhz.com/admin/log/index?page=2&cs=22&l=56 [运行时间：0.217013s][吞吐率：4.61req/s] [内存消耗：2,100.99kb] [文件加载：49]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/log/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/log/index' => '',
+  'page' => '2',
+  'cs' => '22',
+  'l' => '56',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Log.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:49:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/log/index?page=3&cs=22&l=56
+[ info ] www.ddhz.com/admin/log/index?page=3&cs=22&l=56 [运行时间：0.227013s][吞吐率：4.41req/s] [内存消耗：2,101.03kb] [文件加载：49]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/log/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/log/index' => '',
+  'page' => '3',
+  'cs' => '22',
+  'l' => '56',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Log.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:49:11+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/log/index?page=4&cs=22&l=56
+[ info ] www.ddhz.com/admin/log/index?page=4&cs=22&l=56 [运行时间：0.213012s][吞吐率：4.69req/s] [内存消耗：2,100.94kb] [文件加载：49]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/log/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/log/index' => '',
+  'page' => '4',
+  'cs' => '22',
+  'l' => '56',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Log.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:49:11+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/log/index?page=5&cs=22&l=56
+[ info ] www.ddhz.com/admin/log/index?page=5&cs=22&l=56 [运行时间：0.210012s][吞吐率：4.76req/s] [内存消耗：2,100.92kb] [文件加载：49]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/log/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/log/index' => '',
+  'page' => '5',
+  'cs' => '22',
+  'l' => '56',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Log.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:34+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/client/index
+[ info ] www.ddhz.com/admin/client/index [运行时间：0.231013s][吞吐率：4.33req/s] [内存消耗：2,184.67kb] [文件加载：52]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'client',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/log/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/client/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Client->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Client.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\client\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'source',
+  8 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:37+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/client/index?mobile=&page=2
+[ info ] www.ddhz.com/admin/client/index?mobile=&page=2 [运行时间：0.208012s][吞吐率：4.81req/s] [内存消耗：2,185.14kb] [文件加载：52]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'client',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/client/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/client/index' => '',
+  'mobile' => '',
+  'page' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Client->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Client.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\client\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'source',
+  8 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:37+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/client/index?mobile=&page=3
+[ info ] www.ddhz.com/admin/client/index?mobile=&page=3 [运行时间：0.208012s][吞吐率：4.81req/s] [内存消耗：2,185.16kb] [文件加载：52]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'client',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/client/index?mobile=&page=2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/client/index' => '',
+  'mobile' => '',
+  'page' => '3',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Client->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Client.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\client\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'source',
+  8 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:39+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/menu/index
+[ info ] www.ddhz.com/admin/menu/index [运行时间：0.207012s][吞吐率：4.83req/s] [内存消耗：2,253.70kb] [文件加载：50]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/client/index?mobile=&page=3',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/menu/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Menu->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Menu.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\menu\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'infolist',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:43+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/role/index
+[ info ] www.ddhz.com/admin/role/index [运行时间：0.204011s][吞吐率：4.90req/s] [内存消耗：2,204.69kb] [文件加载：50]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'role',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/menu/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/role/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Role->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Role.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\role\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'infolist',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:45+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index
+[ info ] www.ddhz.com/admin/user/index [运行时间：0.175010s][吞吐率：5.71req/s] [内存消耗：2,208.02kb] [文件加载：50]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/role/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/user/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\User.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\user\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'infolist',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:47+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/log/index
+[ info ] www.ddhz.com/admin/log/index [运行时间：0.221013s][吞吐率：4.52req/s] [内存消耗：2,096.93kb] [文件加载：49]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/user/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/log/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Log.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\log\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'Nowpage',
+  8 => 'allpage',
+  9 => 'count',
+  10 => 'search_user',
+  11 => 'val',
+  12 => 'cs',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:47+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/log/index?page=1&cs=22&l=56
+[ info ] www.ddhz.com/admin/log/index?page=1&cs=22&l=56 [运行时间：0.210012s][吞吐率：4.76req/s] [内存消耗：2,100.97kb] [文件加载：49]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/log/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/log/index' => '',
+  'page' => '1',
+  'cs' => '22',
+  'l' => '56',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Log.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:50+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/log/index?page=3&cs=22&l=56
+[ info ] www.ddhz.com/admin/log/index?page=3&cs=22&l=56 [运行时间：0.192011s][吞吐率：5.21req/s] [内存消耗：2,101.03kb] [文件加载：49]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/log/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/log/index' => '',
+  'page' => '3',
+  'cs' => '22',
+  'l' => '56',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Log.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:51+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/log/index?page=4&cs=22&l=56
+[ info ] www.ddhz.com/admin/log/index?page=4&cs=22&l=56 [运行时间：0.204012s][吞吐率：4.90req/s] [内存消耗：2,100.94kb] [文件加载：49]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/log/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/log/index' => '',
+  'page' => '4',
+  'cs' => '22',
+  'l' => '56',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Log.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:52+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/log/index?page=5&cs=22&l=56
+[ info ] www.ddhz.com/admin/log/index?page=5&cs=22&l=56 [运行时间：0.223013s][吞吐率：4.48req/s] [内存消耗：2,100.92kb] [文件加载：49]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/log/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/log/index' => '',
+  'page' => '5',
+  'cs' => '22',
+  'l' => '56',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Log.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:54+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/log/index?page=6&cs=22&l=56
+[ info ] www.ddhz.com/admin/log/index?page=6&cs=22&l=56 [运行时间：0.244014s][吞吐率：4.10req/s] [内存消耗：2,100.99kb] [文件加载：49]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/log/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/log/index' => '',
+  'page' => '6',
+  'cs' => '22',
+  'l' => '56',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Log.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:55+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/log/index?page=5&cs=22&l=56
+[ info ] www.ddhz.com/admin/log/index?page=5&cs=22&l=56 [运行时间：0.256015s][吞吐率：3.91req/s] [内存消耗：2,100.92kb] [文件加载：49]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/log/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/log/index' => '',
+  'page' => '5',
+  'cs' => '22',
+  'l' => '56',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Log.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:55+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/log/index?page=3&cs=22&l=56
+[ info ] www.ddhz.com/admin/log/index?page=3&cs=22&l=56 [运行时间：0.309018s][吞吐率：3.24req/s] [内存消耗：2,101.03kb] [文件加载：49]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/log/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/log/index' => '',
+  'page' => '3',
+  'cs' => '22',
+  'l' => '56',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Log.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:55:58+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/client/index
+[ info ] www.ddhz.com/admin/client/index [运行时间：0.227013s][吞吐率：4.41req/s] [内存消耗：2,184.90kb] [文件加载：52]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'client',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/log/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/client/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Client->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Client.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\client\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'source',
+  8 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:13+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/client/index?mobile=&page=2
+[ info ] www.ddhz.com/admin/client/index?mobile=&page=2 [运行时间：0.227013s][吞吐率：4.41req/s] [内存消耗：2,185.14kb] [文件加载：52]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'client',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/client/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/client/index' => '',
+  'mobile' => '',
+  'page' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Client->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Client.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\client\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'source',
+  8 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:14+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/client/index?mobile=&page=3
+[ info ] www.ddhz.com/admin/client/index?mobile=&page=3 [运行时间：0.204011s][吞吐率：4.90req/s] [内存消耗：2,185.16kb] [文件加载：52]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'client',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/client/index?mobile=&page=2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/client/index' => '',
+  'mobile' => '',
+  'page' => '3',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Client->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Client.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\client\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'source',
+  8 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/client/index?mobile=&page=2
+[ info ] www.ddhz.com/admin/client/index?mobile=&page=2 [运行时间：0.211012s][吞吐率：4.74req/s] [内存消耗：2,185.16kb] [文件加载：52]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'client',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/client/index?mobile=&page=3',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/client/index' => '',
+  'mobile' => '',
+  'page' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Client->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Client.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\client\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'source',
+  8 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:17+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/client/index?mobile=&page=1
+[ info ] www.ddhz.com/admin/client/index?mobile=&page=1 [运行时间：0.214012s][吞吐率：4.67req/s] [内存消耗：2,185.16kb] [文件加载：52]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'client',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/client/index?mobile=&page=2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/client/index' => '',
+  'mobile' => '',
+  'page' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Client->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Client.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\client\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'source',
+  8 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:18+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/product/index
+[ info ] www.ddhz.com/admin/product/index [运行时间：0.246014s][吞吐率：4.06req/s] [内存消耗：2,325.13kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/client/index?mobile=&page=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/product/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Product->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Product.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'type',
+  8 => 'status',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:19+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/product/index?page=2
+[ info ] www.ddhz.com/admin/product/index?page=2 [运行时间：0.237014s][吞吐率：4.22req/s] [内存消耗：2,325.30kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/product/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/product/index' => '',
+  'page' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Product->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Product.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'type',
+  8 => 'status',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:20+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/product/index?page=3
+[ info ] www.ddhz.com/admin/product/index?page=3 [运行时间：0.237014s][吞吐率：4.22req/s] [内存消耗：2,325.30kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/product/index?page=2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/product/index' => '',
+  'page' => '3',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Product->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Product.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'type',
+  8 => 'status',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:21+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/product/index?page=4
+[ info ] www.ddhz.com/admin/product/index?page=4 [运行时间：0.304018s][吞吐率：3.29req/s] [内存消耗：2,325.31kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/product/index?page=3',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/product/index' => '',
+  'page' => '4',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Product->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Product.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'type',
+  8 => 'status',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:21+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/product/index?page=5
+[ info ] www.ddhz.com/admin/product/index?page=5 [运行时间：0.238014s][吞吐率：4.20req/s] [内存消耗：2,325.27kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/product/index?page=4',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/product/index' => '',
+  'page' => '5',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Product->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Product.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'type',
+  8 => 'status',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:22+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/product/index?page=6
+[ info ] www.ddhz.com/admin/product/index?page=6 [运行时间：0.228013s][吞吐率：4.39req/s] [内存消耗：2,325.27kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/product/index?page=5',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/product/index' => '',
+  'page' => '6',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Product->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Product.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'type',
+  8 => 'status',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:23+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/product/index?page=5
+[ info ] www.ddhz.com/admin/product/index?page=5 [运行时间：0.240013s][吞吐率：4.17req/s] [内存消耗：2,325.27kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/product/index?page=6',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/product/index' => '',
+  'page' => '5',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Product->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Product.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'type',
+  8 => 'status',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:24+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/product/index?page=4
+[ info ] www.ddhz.com/admin/product/index?page=4 [运行时间：0.213012s][吞吐率：4.69req/s] [内存消耗：2,325.31kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/product/index?page=5',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/product/index' => '',
+  'page' => '4',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Product->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Product.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'type',
+  8 => 'status',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:25+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/product/index?page=3
+[ info ] www.ddhz.com/admin/product/index?page=3 [运行时间：0.246014s][吞吐率：4.06req/s] [内存消耗：2,325.30kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/product/index?page=4',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/product/index' => '',
+  'page' => '3',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Product->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Product.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'type',
+  8 => 'status',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:25+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/product/index?page=2
+[ info ] www.ddhz.com/admin/product/index?page=2 [运行时间：0.241014s][吞吐率：4.15req/s] [内存消耗：2,325.30kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/product/index?page=3',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/product/index' => '',
+  'page' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Product->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Product.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'type',
+  8 => 'status',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:56:26+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/product/index?page=1
+[ info ] www.ddhz.com/admin/product/index?page=1 [运行时间：0.237013s][吞吐率：4.22req/s] [内存消耗：2,325.30kb] [文件加载：53]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/product/index?page=2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/product/index' => '',
+  'page' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Product->index[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Product.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html [ array (
+  0 => 'admintitle',
+  1 => 'username',
+  2 => 'menu',
+  3 => 'menu_child',
+  4 => 'rolename',
+  5 => 'position',
+  6 => 'version',
+  7 => 'type',
+  8 => 'status',
+  9 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
