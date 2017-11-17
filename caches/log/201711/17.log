@@ -42829,3 +42829,136 @@
 [ info ] [ DB ] INIT mysql
 [ info ] [ RUN ] app\admin\controller\Log->index[ E:\phpstudy\WWW\YUNUCMSv1.0.2\app\admin\controller\Log.php ]
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:39:52+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ info ] www.ddhz.com/ [运行时间：0.046002s][吞吐率：21.74req/s] [内存消耗：1,122.03kb] [文件加载：38]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:39:52+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/login
+[ info ] www.ddhz.com/admin/index/login [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：1,231.96kb] [文件加载：39]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/login' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Index->login[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Index.php ]
+[ info ] [ VIEW ] F:\ddhz\ddhz-admin\xtp/app/admin\view\index\login.html [ array (
+  0 => 'admintitle',
+  1 => 'position',
+  2 => 'version',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-17T21:40:00+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/dologin?username=admin&password=admin
+[ info ] www.ddhz.com/admin/index/dologin?username=admin&password=admin [运行时间：0.162009s][吞吐率：6.17req/s] [内存消耗：1,772.09kb] [文件加载：45]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/index/login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/dologin' => '',
+  'username' => 'admin',
+  'password' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Index->doLogin[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [1049]SQLSTATE[HY000] [1049] Unknown database 'yunucms'[F:\ddhz\ddhz-admin\xtp\system\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-11-17T21:40:02+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/dologin?username=admin&password=admin
+[ info ] www.ddhz.com/admin/index/dologin?username=admin&password=admin [运行时间：0.052003s][吞吐率：19.23req/s] [内存消耗：1,772.09kb] [文件加载：45]
+[ info ] [ LANG ] F:\ddhz\ddhz-admin\xtp\system\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ao252cuqeiuksdj5vfl77mhnq1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.ddhz.com/admin/index/login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ddhz.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/dologin' => '',
+  'username' => 'admin',
+  'password' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Index->doLogin[ F:\ddhz\ddhz-admin\xtp\app\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [1049]SQLSTATE[HY000] [1049] Unknown database 'yunucms'[F:\ddhz\ddhz-admin\xtp\system\library\think\db\Connection.php:293]
