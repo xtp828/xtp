@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\product\index.html";i:1510883763;s:63:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\header.html";i:1505199720;s:61:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\menu.html";i:1510732278;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\product\index.html";i:1510902151;s:63:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\header.html";i:1510893240;s:61:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\menu.html";i:1510893240;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -117,7 +117,7 @@ layui.use(['layer', 'common'], function () {
                             </div>
 
                             <label class="layui-form-label sou_lablel">状态</label>
-                            <div class="layui-input-inline" style="width: 80px;">
+                            <div class="layui-input-inline" style="width: 90px;">
                                 <select name="status">
                                     <?php echo $status; ?>
                                 </select>
@@ -195,7 +195,7 @@ layui.use(['layer', 'common'], function () {
                 success: function(data){
                     if(data.code == 1){
                         if(status == 1){
-                            obs.attr('data-change', 0);
+                            obs.attr('data-change', 2);
                             obs.find('div').removeClass('layui-form-onswitch');
                         }else{
                             obs.attr('data-change', 1);

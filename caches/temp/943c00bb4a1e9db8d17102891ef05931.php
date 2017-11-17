@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\product\editproduct.html";i:1510881914;s:63:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\header.html";i:1505199720;s:61:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\menu.html";i:1510732278;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\product\editproduct.html";i:1510893240;s:63:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\header.html";i:1510893240;s:61:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\menu.html";i:1510893240;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>

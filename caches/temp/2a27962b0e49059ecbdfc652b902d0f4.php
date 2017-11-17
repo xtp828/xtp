@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\menu\addrule.html";i:1510893240;s:63:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\header.html";i:1510893240;s:61:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\menu.html";i:1510893240;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\box\editbox.html";i:1510909195;s:63:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\header.html";i:1510893240;s:61:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\menu.html";i:1510893240;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -18,8 +18,8 @@
 	<title><?php echo $admintitle; ?>_<?php echo $position['name']; ?></title>
 </head>
 <body>
-	<div id="main-container">
-		<div class="header">
+<div id="main-container">
+    <div class="header">
 	<div class="logo fl"><a href="javascript:;"><i class="icon icon-yun"></i></a></div>
 	<div class="head_name fl"><a href="<?php echo url('index/index'); ?>">管理控制台</a></div>
 	<div class="nav fl">
@@ -87,85 +87,78 @@ layui.use(['layer', 'common'], function () {
   	});
  });
 </script>
-		<div class="main">
-			<div class="notice"><?php echo $position['url']; ?></div>
-			<div class="main_content">
-				<div class="title">
-					<span><?php echo $position['name']; ?></span>
-				</div>
-				<form  class="layui-form layui-form-pane" id="formrec" method="post" role="form">
-				<div class="layui-form-item">
-		            <label class="layui-form-label">默认顶级</label>
-		            <div class="layui-input-inline w300">
-		                <select data-val="true" lay-filter="pid" name="pid"  lay-search="">
-		                    <option selected="selected" value="">默认顶级</option>
-		                    <?php if(is_array($admin_rule) || $admin_rule instanceof \think\Collection || $admin_rule instanceof \think\Paginator): if( count($admin_rule)==0 ) : echo "" ;else: foreach($admin_rule as $key=>$v): ?>
-		                        <option value="<?php echo $v['id']; ?>"><?php if($v['pid'] == 0): else: if($v['lvl'] == 2): ?>　├ <?php else: ?>　　├ <?php endif; endif; ?><?php echo $v['title']; ?></option>
-		                    <?php endforeach; endif; else: echo "" ;endif; ?>
-		                </select>
-		            </div>
-		        </div>
-				<div class="layui-form-item">
-		            <label class="layui-form-label">菜单名称</label>
-		            <div class="layui-input-block">
-		                <input name="title" autocomplete="off" value="" placeholder="菜单名称" class="layui-input w300" type="text" required  lay-verify="title">
-		            </div>
-		        </div>
-		        <div class="layui-form-item">
-		            <label class="layui-form-label">节点</label>
-		            <div class="layui-input-inline">
-		                <input name="name" autocomplete="off" value="" placeholder="模块/控制器/方法" class="layui-input w300" type="text" required  lay-verify="required">
-		            </div>
-		            <div class="layui-input-inline"><font class="font_tip">如：admin/user/adduser (一级节点添加“#”即可)</font></div>
-		        </div>
-		        <div class="layui-form-item">
-		            <label class="layui-form-label">css样式</label>
-		            <div class="layui-input-inline">
-		                <input name="css" autocomplete="off" value="" placeholder="输入菜单名称前显示的CSS样式" class="layui-input w300" type="text">
-		            </div>
-		            <div class="layui-input-inline"><font class="font_tip">如：fa fa-user <a href="http://fontawesome.io/icons/" target="_blank" style="text-decoration:underline;"> [ 参考网址 ]</a></font></div>
-		        </div>
-		        <div class="layui-form-item">
-		            <label class="layui-form-label">排序</label>
-		            <div class="layui-input-block">
-		                <input name="sort" lay-verify="number" autocomplete="off" value="0" placeholder="输入顺序" class="layui-input w300" type="text">
-		            </div>
-		        </div>
+    <div class="main">
+        <div class="notice"><?php echo $position['url']; ?></div>
+        <div class="main_content">
+            <div class="title">
+                <span><?php echo $position['name']; ?></span>
+            </div>
+            <form  class="layui-form layui-form-pane" id="formrec" method="post" role="form">
+                <input type="hidden" name="id" value="<?php echo $info['id']; ?>">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">盒子编号</label>
+                    <div class="layui-input-inline" style="width: 100px;">
+                        <input class="layui-input" name="number_no" type="text" placeholder="盒子编号" required  lay-verify="name" value="<?php echo $info['number_no']; ?>" readonly>
+                    </div>
+                </div>
 
-		        <div class="layui-form-item">
-		            <label class="layui-form-label">是否启用</label>
-		            <div class="layui-input-block">
-		            	<input type="checkbox" checked="" name="status" lay-skin="switch" lay-filter="switchTest">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">摆放楼层</label>
+                    <div class="layui-input-inline" style="width: 80px;">
+                        <input class="layui-input" name="floors" type="text" placeholder="摆放楼层" required  lay-verify="floors" value="<?php echo $info['floors']; ?>">
+                    </div>
+                </div>
 
-		            </div>
-		        </div>
-		        <div class="layui-form-item">
-		        	<label class="layui-form-label"></label>
-		            <div class="layui-input-block">
-		            	<button class="btn" lay-submit="" lay-filter="add-role" data-href=<?php echo url('addrule'); ?>>提交</button>
-		            </div>
-		        </div>
-				</form>
-			</div>
-		</div>
-	</div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">摆放地址</label>
+                    <div class="layui-input-inline">
+                        <div class="layui-input-inline" style="width: 60px;">
+                            <button class="btn" type="button" id="choice_box" style="width: 100px;"><i class="fa fa-search" aria-hidden="true"></i>  点击选择</button>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux" id="address"><?php echo $info['province']; ?>-<?php echo $info['city']; ?>-<?php echo $info['area']; ?>，<?php echo $info['address']; ?>，<?php echo $info['name']; ?></div>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">状态</label>
+                    <div class="layui-input-inline">
+                        <input type="checkbox" <?php if($info['status'] == 1): ?>checked<?php endif; ?> name="status" lay-skin="switch" lay-filter="switchTest" title="开关"><div class="layui-unselect layui-form-switch layui-form-onswitch"><i></i></div>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label"></label>
+                    <div class="layui-input-inline">
+                        <input type="hidden"  name="submit_type" value="edit"/>
+                        <input type="hidden"  name="building_id" id="building_id" value="<?php echo $info['building_id']; ?>"/>
+                        <button class="btn" lay-submit="" lay-filter="add-role" data-href=<?php echo url('editBox'); ?>>提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <script>
-    layui.use(['form','common'], function(){
-        var $ = layui.jquery,common=layui.common,form = layui.form();
-        //自定义验证规则
-        form.verify({
-            pid: function(value){
-                if(value == ""){
-                    return '菜单分类不能为空';
-                }
-            }
-            ,title:function(value){
-                if(value == ""){
-                    return '菜单名称不能为空';
-                }
-            }
+    layui.use(['form','common', 'layer'], function(){
+        var $ = layui.jquery,common=layui.common,form = layui.form(), layer = layui.layer;
 
+        $('#choice_box').click(function(){
+            layer.open({
+                type: 2,
+                area: ['800px', '500px'],
+                fix: false, //不固定
+                maxmin: true,
+                title: ['选择大厦信息', 'font-size:18px;'],
+                offset: 'r',
+                content: "<?php echo url('souHouse'); ?>"
+            });
         });
+
+        form.verify({
+            floors:[/^([-]?[0-9a-zA-Z]+)$/i, '请选择楼层']
+            ,type:[/^\d+$/, '类型必填且必须为整数']
+        });
+
         //监听提交
         form.on('submit(add-role)', function(data){
             var sub=true;
@@ -179,7 +172,7 @@ layui.use(['layer', 'common'], function () {
                         data: data.field,
                         success: function (info) {
                             if (info.code == 1) {
-                                common.layerAlertSHref(info.msg, '提示', "<?php echo url('menu/index'); ?>");
+                                common.layerAlertSHref(info.msg, '提示', "<?php echo url('box/index'); ?>");
                             }
                             else {
                                 common.layerAlertE(info.msg, '提示');

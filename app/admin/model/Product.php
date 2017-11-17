@@ -76,7 +76,7 @@ class Product extends Model
         }
 
         $input['price'] = $input['price']*100;
-        $input['status'] = isset($input['status']) && $input['status'] == 'on' ? 1 : 0;
+        $input['status'] = isset($input['status']) && $input['status'] == 'on' ? 1 : 2;
 
         if(empty($id) && $input['submit_type'] == 'edit') {
             return ['code' =>0, 'msg' => '商品ID错误'];

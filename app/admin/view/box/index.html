@@ -20,11 +20,11 @@
                         <div class="layui-inline">
                             <label class="layui-form-label sou_lablem">机器码</label>
                             <div class="layui-input-inline" style="width: 100px;">
-                                <input type="text" name="name" value="{:input('get.name')}" autocomplete="off" class="layui-input">
+                                <input type="text" name="number_no" value="{:input('get.number_no')}" autocomplete="off" class="layui-input">
                             </div>
 
                             <label class="layui-form-label sou_lablel">状态</label>
-                            <div class="layui-input-inline" style="width: 80px;">
+                            <div class="layui-input-inline" style="width: 90px;">
                                 <select name="status">
                                     {$status}
                                 </select>
@@ -32,17 +32,17 @@
 
                             <label class="layui-form-label sou_lablel">楼层</label>
                             <div class="layui-input-inline" style="width: 50px;">
-                                <input type="text" id="product_area" value="{:input('get.product_area')}" name="product_area" autocomplete="off" class="layui-input">
+                                <input type="text" id="floors" value="{:input('get.floors')}" name="floors" autocomplete="off" class="layui-input">
                             </div>
 
                             <label class="layui-form-label sou_lablem">大厦名</label>
                             <div class="layui-input-inline" style="width: 120px;">
-                                <input type="text" id="product_area" value="{:input('get.product_area')}" name="product_area" autocomplete="off" class="layui-input">
+                                <input type="text" id="name" value="{:input('get.name')}" name="name" autocomplete="off" class="layui-input">
                             </div>
 
                             <label class="layui-form-label sou_lableg">大厦地址</label>
-                            <div class="layui-input-inline" style="width: 425px;" id="distpicker">
-                                <select lay-ignore name="province" class="box_select"></select>
+                            <div class="layui-input-inline" style="width: 425px;" id="distpicker" data-toggle="distpicker" data-autoselect="2">
+                                <select lay-ignore  name="province" class="box_select"></select>
                                 <select lay-ignore name="city" class="box_select"></select>
                                 <select lay-ignore name="area" class="box_select"></select>
                             </div>
@@ -55,7 +55,7 @@
                                 <i class="layui-icon">&#xe615;</i>
                                 搜索
                             </button>
-                            <button class="layui-btn layui-btn-lg" type="button" onclick="window.location.href='{:url('addProduct')}'">
+                            <button class="layui-btn layui-btn-lg" type="button" onclick="window.location.href='{:url('addBox')}'">
                                 <i class="layui-icon">&#xe61f;</i>
                                 增加
                             </button>
@@ -82,15 +82,15 @@
                     <tr>
                         <td>{$v.id}</td>
                         <td>{$v.number_no}</td>
-                        <td>{$v.building_id}</td>
-                        <td>{$v.area}</td>
+                        <td>{$v.name}</td>
+                        <td>{$v.province}-{$v.city}-{$v.area}，{$v.address}</td>
                         <td>{$v.floors}</td>
                         <td>{$v.createtime}</td>
                         <td>
                             <a href="javascript:;" class="change_status" data-id="{$v.id}" data-change="{$v.status}"> <div class="layui-unselect layui-form-switch {if condition="$v.status eq 1"}layui-form-onswitch{/if}"><i></i></div> </a>
                         </td>
                         <td>
-                            <a class="btn do-action" data-type="doEdit" data-href="{:url('editProduct')}" data-id="{$v.id}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;编辑</a>
+                            <a class="btn do-action" data-type="doEdit" data-href="{:url('editBox')}" data-id="{$v.id}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;编辑</a>
                         </td>
                     </tr>
             {/foreach}
@@ -114,14 +114,14 @@
             var obs=$(this);
             var status = obs.attr('data-change');
             $.ajax({
-                url: '{:url("delProduct")}',
+                url: '{:url("delBox")}',
                 dataType: "json",
                 data:{'ids':id, 'status':status},
                 type: "POST",
                 success: function(data){
                     if(data.code == 1){
                         if(status == 1){
-                            obs.attr('data-change', 0);
+                            obs.attr('data-change', 2);
                             obs.find('div').removeClass('layui-form-onswitch');
                         }else{
                             obs.attr('data-change', 1);

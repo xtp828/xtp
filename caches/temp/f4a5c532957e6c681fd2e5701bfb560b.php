@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:59:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\box\index.html";i:1510892271;s:63:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\header.html";i:1505199720;s:61:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\menu.html";i:1510732278;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:59:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\box\index.html";i:1510910052;s:63:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\header.html";i:1510893240;s:61:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\menu.html";i:1510893240;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -104,11 +104,11 @@ layui.use(['layer', 'common'], function () {
                         <div class="layui-inline">
                             <label class="layui-form-label sou_lablem">机器码</label>
                             <div class="layui-input-inline" style="width: 100px;">
-                                <input type="text" name="name" value="<?php echo input('get.name'); ?>" autocomplete="off" class="layui-input">
+                                <input type="text" name="number_no" value="<?php echo input('get.number_no'); ?>" autocomplete="off" class="layui-input">
                             </div>
 
                             <label class="layui-form-label sou_lablel">状态</label>
-                            <div class="layui-input-inline" style="width: 80px;">
+                            <div class="layui-input-inline" style="width: 90px;">
                                 <select name="status">
                                     <?php echo $status; ?>
                                 </select>
@@ -116,17 +116,17 @@ layui.use(['layer', 'common'], function () {
 
                             <label class="layui-form-label sou_lablel">楼层</label>
                             <div class="layui-input-inline" style="width: 50px;">
-                                <input type="text" id="product_area" value="<?php echo input('get.product_area'); ?>" name="product_area" autocomplete="off" class="layui-input">
+                                <input type="text" id="floors" value="<?php echo input('get.floors'); ?>" name="floors" autocomplete="off" class="layui-input">
                             </div>
 
                             <label class="layui-form-label sou_lablem">大厦名</label>
                             <div class="layui-input-inline" style="width: 120px;">
-                                <input type="text" id="product_area" value="<?php echo input('get.product_area'); ?>" name="product_area" autocomplete="off" class="layui-input">
+                                <input type="text" id="name" value="<?php echo input('get.name'); ?>" name="name" autocomplete="off" class="layui-input">
                             </div>
 
                             <label class="layui-form-label sou_lableg">大厦地址</label>
-                            <div class="layui-input-inline" style="width: 425px;" id="distpicker">
-                                <select lay-ignore name="province" class="box_select"></select>
+                            <div class="layui-input-inline" style="width: 425px;" id="distpicker" data-toggle="distpicker" data-autoselect="2">
+                                <select lay-ignore  name="province" class="box_select"></select>
                                 <select lay-ignore name="city" class="box_select"></select>
                                 <select lay-ignore name="area" class="box_select"></select>
                             </div>
@@ -139,7 +139,7 @@ layui.use(['layer', 'common'], function () {
                                 <i class="layui-icon">&#xe615;</i>
                                 搜索
                             </button>
-                            <button class="layui-btn layui-btn-lg" type="button" onclick="window.location.href='<?php echo url('addProduct'); ?>'">
+                            <button class="layui-btn layui-btn-lg" type="button" onclick="window.location.href='<?php echo url('addBox'); ?>'">
                                 <i class="layui-icon">&#xe61f;</i>
                                 增加
                             </button>
@@ -166,15 +166,15 @@ layui.use(['layer', 'common'], function () {
                     <tr>
                         <td><?php echo $v['id']; ?></td>
                         <td><?php echo $v['number_no']; ?></td>
-                        <td><?php echo $v['building_id']; ?></td>
-                        <td><?php echo $v['area']; ?></td>
+                        <td><?php echo $v['name']; ?></td>
+                        <td><?php echo $v['province']; ?>-<?php echo $v['city']; ?>-<?php echo $v['area']; ?>，<?php echo $v['address']; ?></td>
                         <td><?php echo $v['floors']; ?></td>
                         <td><?php echo $v['createtime']; ?></td>
                         <td>
                             <a href="javascript:;" class="change_status" data-id="<?php echo $v['id']; ?>" data-change="<?php echo $v['status']; ?>"> <div class="layui-unselect layui-form-switch <?php if($v['status'] == 1): ?>layui-form-onswitch<?php endif; ?>"><i></i></div> </a>
                         </td>
                         <td>
-                            <a class="btn do-action" data-type="doEdit" data-href="<?php echo url('editProduct'); ?>" data-id="<?php echo $v['id']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;编辑</a>
+                            <a class="btn do-action" data-type="doEdit" data-href="<?php echo url('editBox'); ?>" data-id="<?php echo $v['id']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;编辑</a>
                         </td>
                     </tr>
             <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -198,14 +198,14 @@ layui.use(['layer', 'common'], function () {
             var obs=$(this);
             var status = obs.attr('data-change');
             $.ajax({
-                url: '<?php echo url("delProduct"); ?>',
+                url: '<?php echo url("delBox"); ?>',
                 dataType: "json",
                 data:{'ids':id, 'status':status},
                 type: "POST",
                 success: function(data){
                     if(data.code == 1){
                         if(status == 1){
-                            obs.attr('data-change', 0);
+                            obs.attr('data-change', 2);
                             obs.find('div').removeClass('layui-form-onswitch');
                         }else{
                             obs.attr('data-change', 1);

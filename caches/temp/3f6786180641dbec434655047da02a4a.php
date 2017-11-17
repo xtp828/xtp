@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\client\index.html";i:1510901932;s:63:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\header.html";i:1510893240;s:61:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\menu.html";i:1510893240;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:59:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\box\house.html";i:1510901777;s:63:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\header.html";i:1510893240;s:61:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\menu.html";i:1510893240;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -16,6 +16,8 @@
 	<script type="text/javascript" src="__ADM_PUBLIC__/layui/layui.js"></script>
 	<script type="text/javascript" src="__ADM_PUBLIC__/js/global.js"></script>
 	<title><?php echo $admintitle; ?>_<?php echo $position['name']; ?></title>
+<script src="__ADM_PUBLIC__/js/Distpicker/js/distpicker.data.js"></script>
+<script src="__ADM_PUBLIC__/js/Distpicker/js/distpicker.js"></script>
 </head>
 <body>
 <div id="main-container">
@@ -95,30 +97,38 @@ layui.use(['layer', 'common'], function () {
                 <legend><?php echo $position['name']; ?></legend>
             </fieldset>
 
+
             <div class="layui-form">
                 <form>
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-label sou_lablem">手机号</label>
-                            <div class="layui-input-inline" style="width: 120px;">
-                                <input type="text" name="mobile" value="<?php echo input('get.mobile'); ?>" autocomplete="off" class="layui-input">
-                            </div>
-                            <label class="layui-form-label sou_lableg">登陆时间</label>
-                            <div class="layui-input-inline" style="width: 120px;">
-                                <input type="text" id="last_login_time" value="<?php echo input('get.last_login_time'); ?>" name="last_login_time" autocomplete="off" class="layui-input">
-                            </div>
 
-                            <label class="layui-form-label sou_lableg">登陆来源</label>
-                            <div class="layui-input-inline" style="width: 150px;">
-                                <select name="last_login_source">
-                                    <?php echo $source; ?>
+                            <label class="layui-form-label sou_lablel">状态</label>
+                            <div class="layui-input-inline" style="width: 90px;">
+                                <select name="status">
+                                    <?php echo $status; ?>
                                 </select>
                             </div>
 
+                            <label class="layui-form-label sou_lablem">大厦名</label>
                             <div class="layui-input-inline" style="width: 120px;">
+                                <input type="text" id="name" value="<?php echo input('get.name'); ?>" name="name" autocomplete="off" class="layui-input">
+                            </div>
+
+                            <label class="layui-form-label sou_lableg">大厦地址</label>
+                            <div class="layui-input-inline" style="width: 400px;" id="distpicker">
+                                <select lay-ignore name="province" class="box_select"></select>
+                                <select lay-ignore name="city" class="box_select"></select>
+                                <select lay-ignore name="area" class="box_select"></select>
+                            </div>
+                            <div class="layui-input-inline" style="width: 190px;">
                                 <button class="layui-btn layui-btn-lg" lay-submit lay-filter="formDemo">
                                     <i class="layui-icon">&#xe615;</i>
                                     搜索
+                                </button>
+                                <button class="layui-btn layui-btn-lg" type="button" onclick="window.location.href='<?php echo url('addProduct'); ?>'">
+                                    <i class="layui-icon">&#xe61f;</i>
+                                    增加
                                 </button>
                             </div>
                         </div>
@@ -130,48 +140,30 @@ layui.use(['layer', 'common'], function () {
                     <thead>
                     <tr>
                         <th class="sort" width="60"><span>ID</span></th>
-                        <th width="100"><span>客户名称</span></th>
-                        <th class="sort" width="150"><span>最后登录时间</span></th>
-                        <th width="100"><span>最后登录机型</span></th>
-                        <th width="150"><span>最后登录的来源</span></th>
-                        <th width="100"><span>注册时间</span></th>
-                        <th width="100"><span>注册来源</span></th>
+                        <th width="100"><span>大厦名</span></th>
+                        <th class="sort" width="150"><span>地址</span></th>
+                        <th width="100"><span>时间</span></th>
                         <th width="100"><span>状态</span></th>
-                        <!--<th width="100"><span>操作</span></th>-->
+                        <th width="100"><span>操作</span></th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php if(is_array($content['list']) || $content['list'] instanceof \think\Collection || $content['list'] instanceof \think\Paginator): if( count($content['list'])==0 ) : echo "" ;else: foreach($content['list'] as $key=>$v): ?>
                     <tr>
                         <td><?php echo $v['id']; ?></td>
-                        <td><?php echo $v['mobile']; ?></td>
-                        <td><?php echo $v['last_login_time']; ?></td>
-                        <td><?php echo $v['last_login_version']; ?></td>
-                        <td>
-                            <?php if($v['last_login_source'] == 1): ?>
-                                支付宝
-                                <?php else: ?>
-                                微信
-                            <?php endif; ?>
-                        </td>
-                        <td><?php echo $v['reg_time']; ?></td>
-                        <td>
-                            <?php if($v['reg_source'] == 1): ?>
-                                支付宝
-                                <?php else: ?>
-                                微信
-                            <?php endif; ?>
-                        </td>
+                        <td><?php echo $v['name']; ?></td>
+                        <td><?php echo $v['province']; ?>-<?php echo $v['city']; ?>-<?php echo $v['area']; ?></td>
+                        <td><?php echo $v['createtime']; ?></td>
                         <td>
                             <a href="javascript:;" class="change_status" data-id="<?php echo $v['id']; ?>" data-change="<?php echo $v['status']; ?>"> <div class="layui-unselect layui-form-switch <?php if($v['status'] == 1): ?>layui-form-onswitch<?php endif; ?>"><i></i></div> </a>
-                        </td>
-                        <!--<td>
-                            <a class="btn do-action"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;查看详情</a>
-                        </td>-->
-                        </tr>
-                <?php endforeach; endif; else: echo "" ;endif; ?>
-                </tbody>
-                </table>
+            </td>
+            <td>
+                <a class="btn do-action" data-type="doEdit" data-href="<?php echo url('editProduct'); ?>" data-id="<?php echo $v['id']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;编辑</a>
+            </td>
+            </tr>
+            <?php endforeach; endif; else: echo "" ;endif; ?>
+            </tbody>
+            </table>
             <?php echo $content['page']; ?>
         </div>
     </div>
@@ -179,13 +171,10 @@ layui.use(['layer', 'common'], function () {
 </div>
 <script type="text/javascript">
 
-    layui.use(['layer', 'form', 'laydate'], function () {
-        var $ = layui.jquery, layer = layui.layer, dt = layui.laydate;
+    $('#distpicker').distpicker(<?php echo $curr_pca; ?>);
 
-        //日期初始化
-        dt.render({
-            elem: '#last_login_time'
-        });
+    layui.use(['layer', 'form'], function () {
+        var $ = layui.jquery, layer = layui.layer;
 
         //0黄色感叹号，1笑脸，2错误，3问号，4灰色锁，5哭脸
         $(document).on('click','.change_status', function () {
@@ -193,14 +182,14 @@ layui.use(['layer', 'common'], function () {
             var obs=$(this);
             var status = obs.attr('data-change');
             $.ajax({
-                url: '<?php echo url("delClient"); ?>',
+                url: '<?php echo url("delProduct"); ?>',
                 dataType: "json",
                 data:{'ids':id, 'status':status},
                 type: "POST",
                 success: function(data){
                     if(data.code == 1){
                         if(status == 1){
-                            obs.attr('data-change', 2);
+                            obs.attr('data-change', 0);
                             obs.find('div').removeClass('layui-form-onswitch');
                         }else{
                             obs.attr('data-change', 1);

@@ -32,6 +32,7 @@ class Log extends Common
         $this->assign('count', $count);
         $this->assign("search_user",$arr);
         $this->assign('val', $key);
+        $this->assign('cs', json_encode(array('admin' => '测试')));
         if(input('get.page')){
             return json($lists);
         }

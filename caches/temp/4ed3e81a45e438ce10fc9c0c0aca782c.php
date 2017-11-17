@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:59:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\log\index.html";i:1505199720;s:63:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\header.html";i:1505199720;s:61:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\menu.html";i:1510732278;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:59:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\log\index.html";i:1510913710;s:63:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\header.html";i:1510893240;s:61:"E:\phpstudy\WWW\YUNUCMSv1.0.2/app/admin\view\public\menu.html";i:1510893240;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -151,6 +151,8 @@ layui.use(['layer', 'common'], function () {
     var laytpl,laypage;
     var url='<?php echo url("log/index"); ?>';
     var allpages='<?php echo $allpage; ?>';
+    var cs = <?php echo $cs; ?>;
+
     layui.use(['layer', 'form','laypage','common', 'icheck','laytpl'], function () {
         var $ = layui.jquery, layer = layui.layer, common = layui.common, form = layui.form();
         $form = $('form');

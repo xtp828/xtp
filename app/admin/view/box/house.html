@@ -1,4 +1,6 @@
 {include file="public/header" /}
+<script src="__ADM_PUBLIC__/js/Distpicker/js/distpicker.data.js"></script>
+<script src="__ADM_PUBLIC__/js/Distpicker/js/distpicker.js"></script>
 </head>
 <body>
 <div id="main-container">
@@ -11,26 +13,11 @@
                 <legend>{$position.name}</legend>
             </fieldset>
 
+
             <div class="layui-form">
                 <form>
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-label sou_lableg">商品名称</label>
-                            <div class="layui-input-inline" style="width: 120px;">
-                                <input type="text" name="name" value="{:input('get.name')}" autocomplete="off" class="layui-input">
-                            </div>
-                            <label class="layui-form-label sou_lableg">商品产地</label>
-                            <div class="layui-input-inline" style="width: 120px;">
-                                <input type="text" id="product_area" value="{:input('get.product_area')}" name="product_area" autocomplete="off" class="layui-input">
-                            </div>
-
-                            <label class="layui-form-label sou_lableg">商品类型</label>
-                            <div class="layui-input-inline" style="width: 150px;">
-                                <select name="type">
-                                    <option value="0">全部</option>
-                                    {$type}
-                                </select>
-                            </div>
 
                             <label class="layui-form-label sou_lablel">状态</label>
                             <div class="layui-input-inline" style="width: 90px;">
@@ -39,6 +26,17 @@
                                 </select>
                             </div>
 
+                            <label class="layui-form-label sou_lablem">大厦名</label>
+                            <div class="layui-input-inline" style="width: 120px;">
+                                <input type="text" id="name" value="{:input('get.name')}" name="name" autocomplete="off" class="layui-input">
+                            </div>
+
+                            <label class="layui-form-label sou_lableg">大厦地址</label>
+                            <div class="layui-input-inline" style="width: 400px;" id="distpicker">
+                                <select lay-ignore name="province" class="box_select"></select>
+                                <select lay-ignore name="city" class="box_select"></select>
+                                <select lay-ignore name="area" class="box_select"></select>
+                            </div>
                             <div class="layui-input-inline" style="width: 190px;">
                                 <button class="layui-btn layui-btn-lg" lay-submit lay-filter="formDemo">
                                     <i class="layui-icon">&#xe615;</i>
@@ -58,11 +56,8 @@
                     <thead>
                     <tr>
                         <th class="sort" width="60"><span>ID</span></th>
-                        <th width="100"><span>商品名称</span></th>
-                        <th class="sort" width="150"><span>价格</span></th>
-                        <th width="100"><span>产地</span></th>
-                        <th width="50"><span>规格</span></th>
-                        <th width="100"><span>商品类型</span></th>
+                        <th width="100"><span>大厦名</span></th>
+                        <th class="sort" width="150"><span>地址</span></th>
                         <th width="100"><span>时间</span></th>
                         <th width="100"><span>状态</span></th>
                         <th width="100"><span>操作</span></th>
@@ -73,27 +68,26 @@
                     <tr>
                         <td>{$v.id}</td>
                         <td>{$v.name}</td>
-                        <td>￥{$v['price']/100}</td>
-                        <td>{$v.product_area}</td>
-                        <td>{:config('sys.unit')[$v['unit']]}</td>
-                        <td>{:get_goods_type()[$v['type']]}</td>
+                        <td>{$v.province}-{$v.city}-{$v.area}</td>
                         <td>{$v.createtime}</td>
                         <td>
                             <a href="javascript:;" class="change_status" data-id="{$v.id}" data-change="{$v.status}"> <div class="layui-unselect layui-form-switch {if condition="$v.status eq 1"}layui-form-onswitch{/if}"><i></i></div> </a>
-                        </td>
-                        <td>
-                            <a class="btn do-action" data-type="doEdit" data-href="{:url('editProduct')}" data-id="{$v.id}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;编辑</a>
-                        </td>
-                        </tr>
-                {/foreach}
-                </tbody>
-                </table>
+            </td>
+            <td>
+                <a class="btn do-action" data-type="doEdit" data-href="{:url('editProduct')}" data-id="{$v.id}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;编辑</a>
+            </td>
+            </tr>
+            {/foreach}
+            </tbody>
+            </table>
             {$content.page}
         </div>
     </div>
 </div>
 </div>
 <script type="text/javascript">
+
+    $('#distpicker').distpicker({$curr_pca});
 
     layui.use(['layer', 'form'], function () {
         var $ = layui.jquery, layer = layui.layer;
@@ -111,7 +105,7 @@
                 success: function(data){
                     if(data.code == 1){
                         if(status == 1){
-                            obs.attr('data-change', 2);
+                            obs.attr('data-change', 0);
                             obs.find('div').removeClass('layui-form-onswitch');
                         }else{
                             obs.attr('data-change', 1);

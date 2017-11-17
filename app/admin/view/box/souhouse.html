@@ -1,0 +1,86 @@
+{include file="public/header" /}
+<script src="__ADM_PUBLIC__/js/Distpicker/js/distpicker.data.js"></script>
+<script src="__ADM_PUBLIC__/js/Distpicker/js/distpicker.js"></script>
+</head>
+<body>
+<div id="main-container">
+    <div class="main_content">
+        <div class="layui-form" style="margin-top: 10px;">
+            <form action="{:url('souHouse')}">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label sou_lablem">大厦名</label>
+                        <div class="layui-input-inline" style="width: 120px;">
+                            <input type="text" id="name" value="{:input('get.name')}" name="name" autocomplete="off" class="layui-input">
+                        </div>
+
+                        <label class="layui-form-label sou_lableg">大厦地址</label>
+                        <div class="layui-input-inline" style="width: 400px;" id="distpicker">
+                            <select lay-ignore name="province" class="box_select"></select>
+                            <select lay-ignore name="city" class="box_select"></select>
+                            <select lay-ignore name="area" class="box_select"></select>
+                        </div>
+
+                        <div class="layui-input-inline" style="width: 100px;">
+                            <button class="layui-btn layui-btn-lg" lay-submit lay-filter="formDemo">
+                                <i class="layui-icon">&#xe615;</i>
+                                搜索
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="table" v-el:table>
+            <table>
+                <thead>
+                <tr>
+                    <th class="sort" width="60"><span>ID</span></th>
+                    <th width="100"><span>大厦名</span></th>
+                    <th class="sort" width="150"><span>地址</span></th>
+                    <th width="100"><span>时间</span></th>
+                    <th width="100"><span>状态</span></th>
+                    <th width="100"><span>操作</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                {foreach name="content.list" item="v"}
+                <tr>
+                    <td>{$v.id}</td>
+                    <td>{$v.name}</td>
+                    <td>{$v.province}-{$v.city}-{$v.area}</td>
+                    <td>{$v.createtime}</td>
+                    <td>
+                        {if condition="$v['status'] eq 1"}
+                        开放
+                        {else/}
+                        <span style="color:red;">禁止</span>
+                        {/if}
+                    </td>
+                    <td>
+                        <a class="btn ok-choice" data-id="{$v.id}" data-info="{$v.province}-{$v.city}-{$v.area}，{$v.address}，{$v.name}"><i class="fa fa-check-square" aria-hidden="true"></i>&nbsp;确认选择</a>
+                    </td>
+                </tr>
+                {/foreach}
+                </tbody>
+            </table>
+        </div>
+</div>
+</div>
+<script type="text/javascript">
+
+    $('#distpicker').distpicker({$curr_pca});
+
+    layui.use(['layer', 'form'], function () {
+        var $ = layui.jquery
+        $('.ok-choice').click(function(){
+            parent.$('#address').text($(this).data('info'));
+            parent.$('#building_id').val($(this).data('id'));
+            parent.layer.close(parent.layer.getFrameIndex(window.name));
+        });
+        //0黄色感叹号，1笑脸，2错误，3问号，4灰色锁，5哭脸
+
+    });
+</script>
+</body>
+</html>

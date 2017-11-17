@@ -165,7 +165,7 @@
       $.each(data, function (i, n) {
         list.push(
           '<option' +
-          ' value="' + (n.address && n.code ? n.code + '-' + n.address : '') + '"' +
+          ' value="' + (n.address && n.code ? n.address : '') + '"' +
           ' data-code="' + (n.code || '') + '"' +
           (n.selected ? ' selected' : '') +
           '>' +

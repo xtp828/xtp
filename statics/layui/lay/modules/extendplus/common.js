@@ -30,7 +30,7 @@
 
             var key = $('#key').val();
             $.getJSON(url, {
-                page: curr || 1,key:key
+                page: curr || 1,key:key,cs:22,l:56
             }, function(data){      //data是后台返回过来的JSON数据
                 $(".spiner-example").css('display','none'); //数据加载完关闭动画
                 if(data==''){
@@ -49,6 +49,7 @@
                         curr: curr || 1,
                         groups: 5,//连续显示分页数
                         jump: function(ob, first){
+                            console.log(ob);
                             if(!first){
                                 obj.Ajaxpage(ob.curr)
                             }

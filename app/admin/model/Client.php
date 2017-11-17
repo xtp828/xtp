@@ -51,7 +51,7 @@ class Client extends Model
             {
                 if($status == 1)
                 {
-                    $status = 0;
+                    $status = 2;
                     $tip = ['code' => 1, 'icon' => 4, 'msg' => '已经禁止'];
                 }else{
                     $status = 1;
