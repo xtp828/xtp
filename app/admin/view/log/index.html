@@ -10,6 +10,7 @@
                     <span>{$position.name}</span>
                 </div>
                 <a class="btn do-action" data-type="doDelete" data-href="{:url('dellog')}">删除</a>
+                <a class="btn" id="test" data-href="{:url('log/index', array('a' => 1, 'b' => 69))}">test</a>
 				<div class="table">
 					<table class="layuitable">
 						<thead>
@@ -37,7 +38,7 @@
                                 <td>{{d[i].admin_name}}</td>
                                 <td>{{d[i].description}}</td>
                                 <td>{{d[i].ip}}</td>
-                                <td>{{d[i].ipaddr.country}}{{d[i].ipaddr.area}}</td>
+                                <td>{{d[i].ipaddr.country}}</td>
                                 <td>
                                     {{# if(d[i].status==1){ }}
                                         操作成功
@@ -67,7 +68,11 @@
     var laytpl,laypage;
     var url='{:url("log/index")}';
     var allpages='{$allpage}';
-    var cs = {$cs};
+    
+    $('#test').click(function(){
+        url = $(this).data('href');
+        alert(url);
+    })
 
     layui.use(['layer', 'form','laypage','common', 'icheck','laytpl'], function () {
         var $ = layui.jquery, layer = layui.layer, common = layui.common, form = layui.form();

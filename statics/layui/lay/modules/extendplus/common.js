@@ -30,8 +30,18 @@
 
             var key = $('#key').val();
             $.getJSON(url, {
-                page: curr || 1,key:key,cs:22,l:56
-            }, function(data){      //data是后台返回过来的JSON数据
+                page: curr || 1,key:key
+            }, function(info){      //data是后台返回过来的JSON数据
+                if(info.code == 0){
+                    obj.layerAlertE(info.msg, '提示');return false;
+                }
+                if(info.list){
+                    data = info.list;
+                    allpages = info.allpage;
+                }else{
+                    data = info;
+                }
+                
                 $(".spiner-example").css('display','none'); //数据加载完关闭动画
                 if(data==''){
                     $("#article_list").html('<tr><td colspan="20" style="padding-top:10px;padding-bottom:10px;font-size:16px;text-align:center">暂无数据</td></tr>');
@@ -41,22 +51,24 @@
                     laytpl(tpl).render(data, function(html){
                         document.getElementById('article_list').innerHTML = html;
                     });
-                    laypage({
-                        cont: $('#AjaxPage'),//容器。值支持id名、原生dom对象，jquery对象,
-                        pages:allpages,//总页数
-                        skip: true,//是否开启跳页
-                        skin: '#28b5d6',//分页组件颜色
-                        curr: curr || 1,
-                        groups: 5,//连续显示分页数
-                        jump: function(ob, first){
-                            console.log(ob);
-                            if(!first){
-                                obj.Ajaxpage(ob.curr)
-                            }
-                            $('#allpage').html('第 '+ ob.curr +' 页，共 '+ ob.pages +' 页');
-                        }
-                    });
                 }
+
+                //重置面板
+                laypage({
+                        cont: $('#AjaxPage'),//容器。值支持id名、原生dom对象，jquery对象,
+                    pages:allpages,//总页数
+                    skip: true,//是否开启跳页
+                    skin: '#28b5d6',//分页组件颜色
+                    curr: curr || 1,
+                    groups: 5,//连续显示分页数
+                    jump: function(ob, first){
+                        console.log(ob);
+                        if(!first){
+                            obj.Ajaxpage(ob.curr)
+                        }
+                        $('#allpage').html('第 '+ ob.curr +' 页，共 '+ ob.pages +' 页');
+                    }
+                });
             });
         },
         layerDel: function (title, text, url, type, dataType, data, callback) {

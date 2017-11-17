@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html";i:1510924997;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\menu.html";i:1510924997;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html";i:1510938050;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\menu.html";i:1510924997;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -96,7 +96,7 @@ layui.use(['layer', 'common'], function () {
             </fieldset>
 
             <div class="layui-form">
-                <form>
+                <form id="form1">
                     <div class="layui-form-item">
                         <div class="layui-inline">
                             <label class="layui-form-label sou_lableg">商品名称</label>
@@ -124,7 +124,7 @@ layui.use(['layer', 'common'], function () {
                             </div>
 
                             <div class="layui-input-inline" style="width: 190px;">
-                                <button class="layui-btn layui-btn-lg" lay-submit lay-filter="formDemo">
+                                <button class="layui-btn layui-btn-lg sub_btn" type="button">
                                     <i class="layui-icon">&#xe615;</i>
                                     搜索
                                 </button>
@@ -152,35 +152,79 @@ layui.use(['layer', 'common'], function () {
                         <th width="100"><span>操作</span></th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <?php if(is_array($content['list']) || $content['list'] instanceof \think\Collection || $content['list'] instanceof \think\Paginator): if( count($content['list'])==0 ) : echo "" ;else: foreach($content['list'] as $key=>$v): ?>
-                    <tr>
-                        <td><?php echo $v['id']; ?></td>
-                        <td><?php echo $v['name']; ?></td>
-                        <td>￥<?php echo $v['price']/100; ?></td>
-                        <td><?php echo $v['product_area']; ?></td>
-                        <td><?php echo config('sys.unit')[$v['unit']]; ?></td>
-                        <td><?php echo get_goods_type()[$v['type']]; ?></td>
-                        <td><?php echo $v['createtime']; ?></td>
-                        <td>
-                            <a href="javascript:;" class="change_status" data-id="<?php echo $v['id']; ?>" data-change="<?php echo $v['status']; ?>"> <div class="layui-unselect layui-form-switch <?php if($v['status'] == 1): ?>layui-form-onswitch<?php endif; ?>"><i></i></div> </a>
-                        </td>
-                        <td>
-                            <a class="btn do-action" data-type="doEdit" data-href="<?php echo url('editProduct'); ?>" data-id="<?php echo $v['id']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;编辑</a>
-                        </td>
-                        </tr>
-                <?php endforeach; endif; else: echo "" ;endif; ?>
-                </tbody>
+                    
+                
+                    <script id="arlist" type="text/html">
+                            {{# for(var i=0;i<d.length;i++){  }}
+                            <tr class="long-td">
+                                <td>{{d[i].id}}</td>
+                                <td>{{d[i].name}}</td>
+                                <td>{{d[i].price/100}}</td>
+                                <td>{{d[i].product_area}}</td>
+                                <td>{{trans(unit, d[i].unit)}}</td>
+                                <td>{{trans(goods_type, d[i].type)}}</td>
+                                <td>{{d[i].createtime}}</td>
+                                <td>
+                                    <a href="javascript:;" class="change_status" data-id="{{d[i].id}}" data-change="{{d[i].status}}"> 
+                                    <div class="layui-unselect layui-form-switch 
+                                        {{# if(d[i].status==1){ }}
+                                            layui-form-onswitch
+                                        {{# } }}">
+                                        <i></i></div> 
+                                        </a>
+                                </td>
+                                <td>
+                                    <a class="btn do-action" data-type="doEdit" data-href="{{edit_product}}" data-id="{{d[i].id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;编辑</a>
+                                </td>
+                            </tr>
+                            {{# } }}
+                    </script>
+                    <tbody id="article_list"></tbody>    
+                
+                
                 </table>
-            <?php echo $content['page']; ?>
         </div>
+
+        <div id="AjaxPage" style="float: right;margin-top:-10px; "></div>
+                <div class="CountPage" style="float: right;clear:both; margin-right:15px; margin-top:-5px;">
+                    共 <?php echo $count; ?> 条 <span id="allpage"></span>
+                </div>
+                <div style="clear:both;"></div>
     </div>
 </div>
 </div>
 <script type="text/javascript">
 
-    layui.use(['layer', 'form'], function () {
-        var $ = layui.jquery, layer = layui.layer;
+    var laytpl,laypage;
+    var url='<?php echo url("product/index"); ?>';
+    var allpages='<?php echo $allpage; ?>';
+    var goods_type = <?php echo $goods_type; ?>;
+    var unit = <?php echo $unit; ?>;
+    var edit_product = '<?php echo url("product/editproduct"); ?>';
+
+    function trans(goods_type,keys){
+        for(var p in goods_type)
+        {
+           if(p == keys){
+              return goods_type[p]; 
+           }
+        }
+    }
+    
+    layui.use(['layer', 'form','laypage','common', 'icheck','laytpl'], function () {
+        var $ = layui.jquery, layer = layui.layer, common = layui.common, form = layui.form();
+        $form = $('form');
+        laytpl =layui.laytpl;
+        laypage = layui.laypage;
+
+        $('.sub_btn').click(function(){
+            allpages='<?php echo $allpage; ?>';
+            url = '<?php echo url("product/index"); ?>' + '?' + $('#form1').serialize();
+            common.Ajaxpage(1);
+            return false;
+        })
+        
+        common.Ajaxpage();
 
         //0黄色感叹号，1笑脸，2错误，3问号，4灰色锁，5哭脸
         $(document).on('click','.change_status', function () {

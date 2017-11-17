@@ -15,9 +15,9 @@ class Product extends Model
     /**
      * 客户列表
      */
-    public function productList()
+    public function productList($page,$each_page = 1)
     {
-        $input['name']            = input('get.name');
+        /*$input['name']            = input('get.name');
         $input['product_area']   = input('get.product_area');
         $input['type'] = input('get.type/d');
         $input['status'] = input('get.status/d');
@@ -41,7 +41,30 @@ class Product extends Model
             'query' => $where,
         ]);
         $page = $list->render();
-        return ['list' => $list, 'page' => $page];
+        return ['list' => $list, 'page' => $page];*/
+
+        $input['name']           = input('get.name');
+        $input['product_area']   = input('get.product_area');
+        $input['type']  = input('get.type/d');
+        $input['status'] = input('get.status/d');
+
+        $validate = new Validate([
+            'product_area' => 'chsAlpha',
+            'name' => 'chsAlpha',
+        ],[
+            'product_area.chs' => '商品产品只能是汉字或英文',
+            'name.chsAlpha'    => '商品名只能是汉字或英文',
+        ]);
+        $result   = $validate->check(['name' => $input['name'], 'product_area' => $input['product_area']]);
+        if(empty($result)){
+            return ['code' => 0, 'msg' => $validate->getError()];
+        }
+
+        $where = array_filter($input);
+        $list = $this->where($where)->page($page, $each_page)->order('createtime desc')->select();
+        $count = $this->where($where)->count();
+        $allpage = intval(ceil($count / $each_page));//计算总页面
+        return ['code' => 1, 'list' => $list, 'total' => $count, 'allpage' => $allpage];
     }
 
     //编辑商品

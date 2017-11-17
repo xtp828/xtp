@@ -6,22 +6,52 @@
  * Time: 11:00
  */
 namespace app\admin\controller;
-use Think\Cache;
 use think\Controller;
+use think\Validate;
+use think\Db;
 
 class Product extends Common
 {
     //商品列表
     public function index()
     {
-        $result = model('product')->productList();
-        if(!is_array($result))
-        {
-            $this->error($result);
+        $page = input('get.page') ? input('get.page'):1;
+        
+        $input['name']           = input('get.name');
+        $input['product_area']   = input('get.product_area');
+        $input['type']  = input('get.type/d');
+        $input['status'] = input('get.status/d');
+        $each_page = 2;
+
+        $validate = new Validate([
+            'product_area' => 'chsAlpha',
+            'name' => 'chsAlpha',
+        ],[
+            'product_area.chsAlpha' => '商品产品只能是汉字或英文',
+            'name.chsAlpha'    => '商品名只能是汉字或英文',
+        ]);
+        $result   = $validate->check(['name' => $input['name'], 'product_area' => $input['product_area']]);
+        if(empty($result)){
+            return json(['code' => 0, 'msg' => $validate->getError()]);
         }
-        $this->assign('type', getOption(get_goods_type(), '', input('get.type')));
+
+        $where = array_filter($input);
+        $list = Db::name('product')->where($where)->page($page, $each_page)->select();
+        $count = Db::name('product')->where($where)->count();
+        $allpage = intval(ceil($count / $each_page));//计算总页面
+
+        $goods_type = get_goods_type();
+        $this->assign('goods_type', json_encode($goods_type));//商品类型
+        $this->assign('unit', json_encode(config('sys.unit')));//商品基本单位
+        $this->assign('Nowpage', $page); //当前页
+        $this->assign('allpage', $allpage); //总页数 
+        $this->assign('count', $count);
+        $this->assign('type', getOption($goods_type, '', input('get.type')));
         $this->assign('status', getOption(config('sys.status'), '', input('get.status')));
-        $this->assign('content', $result);
+        
+        if(input('get.page')){
+            return json(['list' => $list, 'allpage' => $allpage]);
+        }
         return $this->fetch();
     }
 
