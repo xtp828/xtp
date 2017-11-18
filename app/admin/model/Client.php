@@ -15,31 +15,39 @@ class Client extends Model
     /**
      * 客户列表
      */
-    public function clientList()
+    public function clientList($page = 10)
     {
         $input['mobile']            = input('get.mobile','','/^1[34578]{1}\d{9}$/');
         $input['last_login_time']   = input('get.last_login_time');
         $input['last_login_source'] = input('get.last_login_source/d');
 
-        if($input['last_login_time'])
-        {
-            $validate = new Validate(['last_login_time' => 'date']);
-            $result   = $validate->check(['last_login_time' => $input['last_login_time']]);
-            if(empty($result)) {
-                unset($input['last_login_time']);
-            }
+        $validate = new Validate(
+            [
+                'last_login_time' => 'date'
+            ],
+            [
+                'last_login_time.date' => '日期错误'
+            ]
+        );
+        $result   = $validate->check(['last_login_time' => $input['last_login_time']]);
+        if(empty($result)) {
+            return ['code' => 0, 'msg' => $validate->getError()];
         }
 
         $where = array_filter($input);
-        $list = $this->where($where)->paginate(1, false, [
+        $list = $this->where($where)->paginate($page, false, [
             'type'     => 'BoxPage',
             'var_page' => 'page',
             'query' => $input,
         ]);
 
-        unset($input);
-        $page = $list->render();
-        return ['list' => $list, 'page' => $page];
+        $content = array();//将对象转化数组
+        foreach ($list as $data) {
+            $content[] = $data->getData();
+        }
+        $count = $list->getTotal();//总条数
+        $allpages = intval(ceil($count / $page));//计算总页面
+        return ['code' => 1,'list' => $content, 'allpage' => $allpages, 'count' => $count];
     }
 
     public function delClient()

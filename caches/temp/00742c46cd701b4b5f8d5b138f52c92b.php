@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:52:"F:\ddhz\ddhz-admin\xtp/app/admin\view\log\index.html";i:1510933437;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\menu.html";i:1510924997;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:52:"F:\ddhz\ddhz-admin\xtp/app/admin\view\log\index.html";i:1510985776;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\menu.html";i:1510924997;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -94,7 +94,6 @@ layui.use(['layer', 'common'], function () {
                     <span><?php echo $position['name']; ?></span>
                 </div>
                 <a class="btn do-action" data-type="doDelete" data-href="<?php echo url('dellog'); ?>">删除</a>
-                <a class="btn" id="test" data-href="<?php echo url('log/index', array('a' => 1, 'b' => 69)); ?>">test</a>
 				<div class="table">
 					<table class="layuitable">
 						<thead>
@@ -152,11 +151,6 @@ layui.use(['layer', 'common'], function () {
     var laytpl,laypage;
     var url='<?php echo url("log/index"); ?>';
     var allpages='<?php echo $allpage; ?>';
-    
-    $('#test').click(function(){
-        url = $(this).data('href');
-        alert(url);
-    })
 
     layui.use(['layer', 'form','laypage','common', 'icheck','laytpl'], function () {
         var $ = layui.jquery, layer = layui.layer, common = layui.common, form = layui.form();

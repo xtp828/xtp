@@ -19,9 +19,25 @@ class Client extends Common
     //客户列表
     public function index()
     {
+        $input = input('get.');
+        $page = isset($input['page']) && $input['page'] ? $input['page'] : 1;
+        $last_login_source = isset($input['last_login_source']) && $input['last_login_source'] ? 
+                             $input['last_login_source'] : 0;
 
-        $this->assign('source', getOption(config('sys.source_phone'), '', input('get.last_login_source')));
-        $this->assign('content', model('client')->clientlist());
+        $data = model('client')->clientlist(10);
+        if($data['code'] == 0)
+        {
+             return json($data);
+        }
+        $data['allpage'] = isset($data['allpage']) ? $data['allpage']: 0;
+        $data['count'] = isset($data['count']) ? $data['count']: 0;
+        $this->assign('Nowpage', $page); //当前页
+        $this->assign('allpage', $data['allpage']); //总页数 
+        $this->assign('count', $data['count']);
+        $this->assign('source', getOption(config('sys.source_phone'), '', $last_login_source));
+        if(input('get.page')){
+            return json($data);
+        }
         return $this->fetch();
     }
 

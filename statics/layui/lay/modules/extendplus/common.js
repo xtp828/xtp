@@ -53,7 +53,7 @@
                     // article_list(data); //模板赋值
                     var tpl = document.getElementById('arlist').innerHTML;
                     laytpl(tpl).render(data, function(html){
-                        document.getElementById('article_list').innerHTML = html;
+                        $("#article_list").html(html);
                     });
                 }
 
@@ -133,6 +133,7 @@
                 icon: 3
 
             }, function () {
+                
                 $.ajax({
                     url: url,
                     type: type,

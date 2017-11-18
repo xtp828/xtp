@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"F:\ddhz\ddhz-admin\xtp/app/admin\view\client\index.html";i:1510924997;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\menu.html";i:1510924997;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"F:\ddhz\ddhz-admin\xtp/app/admin\view\client\index.html";i:1510985391;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\menu.html";i:1510924997;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -96,7 +96,7 @@ layui.use(['layer', 'common'], function () {
             </fieldset>
 
             <div class="layui-form">
-                <form>
+                <form id="form1">
                     <div class="layui-form-item">
                         <div class="layui-inline">
                             <label class="layui-form-label sou_lablem">手机号</label>
@@ -116,7 +116,7 @@ layui.use(['layer', 'common'], function () {
                             </div>
 
                             <div class="layui-input-inline" style="width: 120px;">
-                                <button class="layui-btn layui-btn-lg" lay-submit lay-filter="formDemo">
+                                <button class="layui-btn layui-btn-lg sub_btn" type="button">
                                     <i class="layui-icon">&#xe615;</i>
                                     搜索
                                 </button>
@@ -140,52 +140,76 @@ layui.use(['layer', 'common'], function () {
                         <!--<th width="100"><span>操作</span></th>-->
                     </tr>
                     </thead>
-                    <tbody>
-                    <?php if(is_array($content['list']) || $content['list'] instanceof \think\Collection || $content['list'] instanceof \think\Paginator): if( count($content['list'])==0 ) : echo "" ;else: foreach($content['list'] as $key=>$v): ?>
-                    <tr>
-                        <td><?php echo $v['id']; ?></td>
-                        <td><?php echo $v['mobile']; ?></td>
-                        <td><?php echo $v['last_login_time']; ?></td>
-                        <td><?php echo $v['last_login_version']; ?></td>
-                        <td>
-                            <?php if($v['last_login_source'] == 1): ?>
-                                支付宝
-                                <?php else: ?>
-                                微信
-                            <?php endif; ?>
-                        </td>
-                        <td><?php echo $v['reg_time']; ?></td>
-                        <td>
-                            <?php if($v['reg_source'] == 1): ?>
-                                支付宝
-                                <?php else: ?>
-                                微信
-                            <?php endif; ?>
-                        </td>
-                        <td>
-                            <a href="javascript:;" class="change_status" data-id="<?php echo $v['id']; ?>" data-change="<?php echo $v['status']; ?>"> <div class="layui-unselect layui-form-switch <?php if($v['status'] == 1): ?>layui-form-onswitch<?php endif; ?>"><i></i></div> </a>
-                        </td>
-                        <!--<td>
-                            <a class="btn do-action"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;查看详情</a>
-                        </td>-->
-                        </tr>
-                <?php endforeach; endif; else: echo "" ;endif; ?>
-                </tbody>
+
+                 <script id="arlist" type="text/html">
+                            {{# for(var i=0;i<d.length;i++){  }}
+                            <tr class="long-td">
+                                <td>{{d[i].id}}</td>
+                                <td>{{d[i].mobile}}</td>
+                                <td>{{d[i].last_login_time}}</td>
+                                <td>{{d[i].last_login_version}}</td>
+                                <td>
+                                    {{# if(d[i].last_login_source==1){ }}
+                                        支付宝
+                                    {{# } else { }}
+                                        微信
+                                    {{# } }}
+                                </td>
+                                <td>{{d[i].reg_time}}</td>
+                                 <td>
+                                    {{# if(d[i].reg_source==1){ }}
+                                        支付宝
+                                    {{# } else { }}
+                                        微信
+                                    {{# } }}
+                                </td>
+                                <td>
+                                    <a href="javascript:;" class="change_status" data-id="{{d[i].id}}" data-change="{{d[i].status}}"> 
+                                    <div class="layui-unselect layui-form-switch 
+                                        {{# if(d[i].status==1){ }}
+                                            layui-form-onswitch
+                                        {{# } }}">
+                                        <i></i></div> 
+                                        </a>
+                                </td>
+                            </tr>
+                            {{# } }}
+                    </script>
+                    <tbody id="article_list"></tbody> 
                 </table>
-            <?php echo $content['page']; ?>
         </div>
+        <div id="AjaxPage" style="float: right;margin-top:-10px; "></div>
+                <div class="CountPage" style="float: right;clear:both; margin-right:15px; margin-top:-5px;">
+                    共 <span id="all_total"><?php echo $count; ?></span> 条 <span id="allpage"></span>
+                </div>
+                <div style="clear:both;"></div>
     </div>
 </div>
 </div>
 <script type="text/javascript">
 
-    layui.use(['layer', 'form', 'laydate'], function () {
-        var $ = layui.jquery, layer = layui.layer, dt = layui.laydate;
+    var laytpl,laypage;
+    var url='<?php echo url("client/index"); ?>';
+    var allpages='<?php echo $allpage; ?>';
+    layui.use(['layer','laypage','common','laytpl', 'laydate'], function () {
+        var $ = layui.jquery, layer = layui.layer, dt = layui.laydate,common = layui.common;
 
         //日期初始化
         dt.render({
             elem: '#last_login_time'
         });
+
+        laytpl =layui.laytpl;
+        laypage = layui.laypage;
+
+        $('.sub_btn').click(function(){
+            allpages='<?php echo $allpage; ?>';
+            url = '<?php echo url("client/index"); ?>' + '?' + $('#form1').serialize();
+            common.Ajaxpage(1);
+            return false;
+        })
+        
+        common.Ajaxpage();
 
         //0黄色感叹号，1笑脸，2错误，3问号，4灰色锁，5哭脸
         $(document).on('click','.change_status', function () {

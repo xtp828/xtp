@@ -15,7 +15,7 @@
 
 
             <div class="layui-form">
-                <form>
+                <form id="form1">
                     <div class="layui-form-item">
                         <div class="layui-inline">
                             <label class="layui-form-label sou_lablem">机器码</label>
@@ -51,7 +51,7 @@
 
                     <div class="layui-form-item">
                         <div class="layui-input-inline" style="width: 190px;">
-                            <button class="layui-btn layui-btn-lg" lay-submit lay-filter="formDemo">
+                            <button class="layui-btn layui-btn-lg sub_btn" type="button">
                                 <i class="layui-icon">&#xe615;</i>
                                 搜索
                             </button>
@@ -77,37 +77,64 @@
                         <th width="100"><span>操作</span></th>
                     </tr>
                     </thead>
-                    <tbody>
-                    {foreach name="content.list" item="v"}
-                    <tr>
-                        <td>{$v.id}</td>
-                        <td>{$v.number_no}</td>
-                        <td>{$v.name}</td>
-                        <td>{$v.province}-{$v.city}-{$v.area}，{$v.address}</td>
-                        <td>{$v.floors}</td>
-                        <td>{$v.createtime}</td>
-                        <td>
-                            <a href="javascript:;" class="change_status" data-id="{$v.id}" data-change="{$v.status}"> <div class="layui-unselect layui-form-switch {if condition="$v.status eq 1"}layui-form-onswitch{/if}"><i></i></div> </a>
-                        </td>
-                        <td>
-                            <a class="btn do-action" data-type="doEdit" data-href="{:url('editBox')}" data-id="{$v.id}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;编辑</a>
-                        </td>
-                    </tr>
-            {/foreach}
-            </tbody>
+
+                    <script id="arlist" type="text/html">
+                            {{# for(var i=0;i<d.length;i++){  }}
+                            <tr class="long-td">
+                                <td>{{d[i].id}}</td>
+                                <td>{{d[i].number_no}}</td>
+                                <td>{{d[i].name}}</td>
+                                <td>{{d[i].province + '-' + d[i].city + '-' + d[i].area}}</td>
+                                <td>{{d[i].floors}}</td>
+                                <td>{{d[i].createtime}}</td>
+                                <td>
+                                    <a href="javascript:;" class="change_status" data-id="{{d[i].id}}" data-change="{{d[i].status}}"> 
+                                        <div class="layui-unselect layui-form-switch 
+                                        {{# if(d[i].status==1){ }}
+                                            layui-form-onswitch
+                                        {{# } }}">
+                                        <i></i></div> 
+                                        </a>
+                                </td>
+                                <td>
+                                <a class="btn do-action" data-type="doEdit" data-href="{{edit_url}}" data-id="{{d[i].id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;编辑</a>
+                                </td>
+                            </tr>
+                            {{# } }}
+                    </script>
+                    <tbody id="article_list"></tbody>
             </table>
-            {$content.page}
+        </div>
+         <div id="AjaxPage" style="float: right;margin-top:-10px; "></div>
+                <div class="CountPage" style="float: right;clear:both; margin-right:15px; margin-top:-5px;">
+                    共 <span id="all_total">{$count}</span> 条 <span id="allpage"></span>
+                </div>
+                <div style="clear:both;"></div>
         </div>
     </div>
 </div>
 </div>
 <script type="text/javascript">
 
-    $('#distpicker').distpicker({$curr_pca});
+    $('#distpicker').distpicker();
+    var laytpl,laypage;
+    var url='{:url("box/index")}';
+    var allpages='{$allpage}';
+    var edit_url = '{:url("box/editBox")}';
 
-    layui.use(['layer', 'form'], function () {
-        var $ = layui.jquery, layer = layui.layer;
+    layui.use(['layer', 'form','laypage','common','laytpl'], function () {
+        var $ = layui.jquery, layer = layui.layer, common = layui.common;
+        laytpl =layui.laytpl;
+        laypage = layui.laypage;
 
+        $('.sub_btn').click(function(){
+            allpages='{$allpage}';
+            url = '{:url("box/index")}' + '?' + $('#form1').serialize();
+            common.Ajaxpage(1);
+            return false;
+        })
+        
+        common.Ajaxpage();
         //0黄色感叹号，1笑脸，2错误，3问号，4灰色锁，5哭脸
         $(document).on('click','.change_status', function () {
             var id=$(this).attr('data-id');

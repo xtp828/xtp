@@ -1,0 +1,98 @@
+{include file="public/header" /}
+</head>
+<body>
+<div id="main-container">
+    {include file="public/menu" /}
+    <div class="main">
+        <div class="notice">{$position.url}</div>
+        <div class="main_content">
+            <div class="title">
+                <span>{$position.name}</span>
+            </div>
+            <form  class="layui-form layui-form-pane" id="formrec" method="post" role="form">
+                <input type="hidden" name="id" value="{$info.id}">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">大厦名</label>
+                    <div class="layui-input-inline" style="width: 200px;">
+                        <input class="layui-input" name="name" type="text" placeholder="大厦名" required  lay-verify="required" value="{$info.name}">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">省市区</label>
+                    <div class="layui-input-inline" style="width: 425px;" id="distpicker" data-toggle="distpicker" data-autoselect="2">
+                                <select lay-ignore  name="province" class="box_select"></select>
+                                <select lay-ignore name="city" class="box_select"></select>
+                                <select lay-ignore name="area" class="box_select"></select>
+                            </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">详细地址</label>
+                    <div class="layui-input-block" style="margin-left: 120px;">
+                      <textarea placeholder="请填写详细地址" name="address" class="layui-textarea" required  lay-verify="required">{$info.address}</textarea>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">状态</label>
+                    <div class="layui-input-inline">
+                        <input type="checkbox" {if $info.status eq 1}checked{/if} name="status" lay-skin="switch" lay-filter="switchTest" title="开关"><div class="layui-unselect layui-form-switch layui-form-onswitch"><i></i></div>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label"></label>
+                    <div class="layui-input-inline">
+                        <input type="hidden"  name="submit_type" value="edit"/>
+                        <button class="btn" lay-submit="" lay-filter="add-role" data-href={:url('editHouse')}>提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="__ADM_PUBLIC__/js/Distpicker/js/distpicker.data.js"></script>
+<script src="__ADM_PUBLIC__/js/Distpicker/js/distpicker.js"></script>
+<script>
+    $('#distpicker').distpicker({$pca});
+    layui.use(['form','common', 'layer'], function(){
+        var $ = layui.jquery,common=layui.common,form = layui.form(), layer = layui.layer;
+
+        //监听提交
+        form.on('submit(add-role)', function(data){
+            var sub=true;
+            var url=$(this).data('href');
+            if(url){
+                if(sub){
+                    $.ajax({
+                        url: url,
+                        type: 'post',
+                        dataType: 'json',
+                        data: data.field,
+                        success: function (info) {
+                            if (info.code == 1) {
+                                common.layerAlertSHref(info.msg, '提示', "{:url('box/house')}");
+                            }
+                            else {
+                                common.layerAlertE(info.msg, '提示');
+                                $(data.elem).removeAttr("disabled").text("提交");
+                            }
+                        },
+                        beforeSend: function () {
+                            $(data.elem).attr("disabled", "true").text("提交中...");
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            common.layerAlertE(textStatus, '提示');
+                        }
+                    });
+                }
+            }else{
+                common.layerAlertE('链接错误！', '提示');
+            }
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

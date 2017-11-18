@@ -10,7 +10,6 @@
                     <span>{$position.name}</span>
                 </div>
                 <a class="btn do-action" data-type="doDelete" data-href="{:url('dellog')}">删除</a>
-                <a class="btn" id="test" data-href="{:url('log/index', array('a' => 1, 'b' => 69))}">test</a>
 				<div class="table">
 					<table class="layuitable">
 						<thead>
@@ -68,11 +67,6 @@
     var laytpl,laypage;
     var url='{:url("log/index")}';
     var allpages='{$allpage}';
-    
-    $('#test').click(function(){
-        url = $(this).data('href');
-        alert(url);
-    })
 
     layui.use(['layer', 'form','laypage','common', 'icheck','laytpl'], function () {
         var $ = layui.jquery, layer = layui.layer, common = layui.common, form = layui.form();

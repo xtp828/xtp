@@ -203,4 +203,9 @@ class  BoxPage extends Paginator
 
         return $this->getAvailablePageWrapper($url, $page);
     }
+
+    public function getTotal()
+    {
+        return $this->total;
+    }
 }

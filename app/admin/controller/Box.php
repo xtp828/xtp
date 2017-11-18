@@ -16,15 +16,19 @@ class Box extends Common
     //盒子列表
     public function index()
     {
-        $result = model('box')->boxlist();
-        if(isset($result['code']) && $result['code'] == 0)
-        {
-            $this->error($result['msg']);
-        }
+        $input = input('get.');
+        $page = isset($input['page']) && $input['page'] ? $input['page'] : 1;
 
-        $this->assign('status', getOption(config('sys.status'), '', input('get.status')));
-        $this->assign('content', $result);
-        $this->assign('curr_pca', json_encode(['province' => input('get.province'), 'city' => input('get.city'), 'district' => input('get.area')]));//默认省市区
+        $data = model('box')->boxList(2);
+        $data['allpage'] = isset($data['allpage']) ? $data['allpage']: 0;
+        $data['count'] = isset($data['count']) ? $data['count']: 0;
+        $this->assign('Nowpage', $page); //当前页
+        $this->assign('allpage', $data['allpage']); //总页数 
+        $this->assign('count', $data['count']);
+        $this->assign('status', getOption(config('sys.status'), '', ''));
+        if(input('get.page')){
+            return json($data);
+        }
         return $this->fetch();
     }
 
@@ -70,7 +74,6 @@ class Box extends Common
     {
         $input = input('get.');
         $page = isset($input['page']) && $input['page'] ? $input['page'] : 1;
-        $each_page = 2;
 
         $validate = new Validate(['name', 'chs', '大厦名只能为汉字']);
         $result = $validate->check($input);
@@ -85,24 +88,15 @@ class Box extends Common
         $where['area'] = isset($input['area']) && !empty($input['area']) ? $input['area'] : '';
         unset($input);
 
-        //$back_result = model('box')->houseList($where, $page, $each_page);
-
-        $list = Db::name('building')
-            ->where(array_filter($where))
-            ->page($page, $each_page)
-            ->select();
-
-        $count = Db::name('building')
-            ->where(array_filter($where))
-            ->count();
-
-        $allpages = intval(ceil($count / $each_page));//计算总页面
+        $data = model('box')->houseList($where, 10);
+        $data['allpage'] = isset($data['allpage']) ? $data['allpage']: 0;
+        $data['count'] = isset($data['count']) ? $data['count']: 0;
         $this->assign('Nowpage', $page); //当前页
-        $this->assign('allpage', $allpages); //总页数 
-        $this->assign('count', $count);
+        $this->assign('allpage', $data['allpage']); //总页数 
+        $this->assign('count', $data['count']);
 
         if(input('get.page')){
-            return json(['list' => $list, 'allpage' => $allpages, 'count' => $count]);
+            return json($data);
         }
 
         return $this->fetch();
@@ -112,11 +106,12 @@ class Box extends Common
     public function house()
     {
         $input = input('get.');
+        $page = isset($input['page']) && $input['page'] ? $input['page'] : 1;
 
         $validate = new Validate(['name', 'chs', '大厦名只能为汉字']);
         $result = $validate->check($input);
         if (empty($result)) {
-            $this->error($validate->getError());
+           return json(['code' => 0, 'msg' => $validate->getError()]);
         }
 
         $where = array();
@@ -126,11 +121,50 @@ class Box extends Common
         $where['area'] = isset($input['area']) && !empty($input['area']) ? $input['area'] : '';
         $where['status'] = isset($input['area']) && !empty($input['status']) ? $input['status'] : '';
 
-        unset($input);
+        $data = model('box')->houseList($where, 10);
+        $data['allpage'] = isset($data['allpage']) ? $data['allpage']: 0;
+        $data['count'] = isset($data['count']) ? $data['count']: 0;
+        $this->assign('Nowpage', $page); //当前页
+        $this->assign('allpage', $data['allpage']); //总页数 
+        $this->assign('count', $data['count']);
         $this->assign('status', getOption(config('sys.status'), '', $where['status']));
-        $this->assign('curr_pca', json_encode(['province' => $where['province'], 'city' => $where['city'], 'district' => $where['area']]));//默认省市区
-        $this->assign('content', model('box')->houseList($where));
+
+        if(input('get.page')){
+            return json($data);
+        }
         return $this->fetch();
+    }
+
+    //编辑大厦
+    public function editHouse()
+    {
+        if(request()->isAjax()){
+            return json(model('box')->editHouse());
+        }
+
+        $id = input('get.id/d');
+        if(empty($id)) {
+            $this->error('参数错误');
+        }
+
+        $info = Db::name('building')->where(array('id' => $id))->find();
+        $this->assign('info', $info);
+        $this->assign('pca', json_encode(['province' => $info['province'], 'city' => $info['city'], 'district' => $info['area']]));
+        return $this->fetch();
+    }
+
+    public function addHouse()
+    {
+        if(request()->isAjax()){
+            return json(model('box')->editHouse());
+        }
+        return $this->fetch();
+    }
+
+    //屏蔽盒子
+    public function delHouse()
+    {
+        return json(model('box')->delHouse());
     }
 
 }
