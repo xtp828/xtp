@@ -50,7 +50,7 @@ class Product extends Common
         $this->assign('status', getOption(config('sys.status'), '', input('get.status')));
         
         if(input('get.page')){
-            return json(['list' => $list, 'allpage' => $allpage]);
+            return json(['list' => $list, 'allpage' => $allpage, 'count' => $count]);
         }
         return $this->fetch();
     }

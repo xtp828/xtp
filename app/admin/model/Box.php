@@ -57,6 +57,51 @@ class Box extends Model
         unset($input);
         $page = $list->render();
         return ['list' => $list, 'page' => $page];
+
+        /*$input = input('get.');
+
+        $validate = new Validate(
+            [
+                'number_no' => 'number',
+                'floors' => 'alphaNum',
+                'name' => 'chs',
+            ],
+            [
+                'number_no.number' => '机器码必须为数字',
+                'floors.number' => '楼层必须为数字或字母',
+                'names.chs' => '大厦名只能为汉字',
+            ]
+        );
+        $result = $validate->check($input);
+        if (empty($result)) {
+            return ['code' => 0, 'msg' => $validate->getError()];
+        }
+
+        $where['b.number_no'] = isset($input['number_no']) && !empty($input['number_no']) ? $input['number_no'] : '';
+        $where['b.floors'] = isset($input['floors']) && !empty($input['floors']) ? $input['floors'] : '';
+        $where['b.status'] = isset($input['floors']) && !empty($input['floors']) ? $input['status'] : 0 ;
+        $where['bu.name'] = isset($input['name']) && !empty($input['name']) ? $input['name'] : '';
+        $where['bu.province'] = isset($input['province']) && !empty($input['province']) ? $input['province'] : '';
+        $where['bu.city'] = isset($input['city']) && !empty($input['city']) ? $input['city'] : '';
+        $where['bu.area'] = isset($input['area']) && !empty($input['area']) ? $input['area'] : '';
+
+        $list = $this->alias('b')
+            ->field('b.*, bu.province, bu.city, bu.area, bu.name, bu.address')
+            ->where(array_filter($where))
+            ->join('building bu', 'b.building_id = bu.id', 'LEFT')
+            ->page($page, $each_page)
+            ->select();
+
+        $count =  $this->alias('b')
+            ->field('b.*, bu.province, bu.city, bu.area, bu.name, bu.address')
+            ->where(array_filter($where))
+            ->join('building bu', 'b.building_id = bu.id', 'LEFT')
+            ->count();
+
+        $allpages = intval(ceil($count / $each_page));//计算总页面
+
+        unset($input);
+        return ['list' => $list, 'allpage' => $allpages];*/
     }
 
     public function delBox()

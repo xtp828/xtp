@@ -9,6 +9,7 @@
 namespace app\admin\controller;
 use think\Controller;
 use think\Validate;
+use think\Db;
 
 class Box extends Common
 {
@@ -68,11 +69,13 @@ class Box extends Common
     public function souHouse()
     {
         $input = input('get.');
+        $page = isset($input['page']) && $input['page'] ? $input['page'] : 1;
+        $each_page = 2;
 
         $validate = new Validate(['name', 'chs', '大厦名只能为汉字']);
         $result = $validate->check($input);
         if (empty($result)) {
-            $this->error($validate->getError());
+            return json(['code' => 0, 'msg' => $validate->getError()]);
         }
 
         $where = array();
@@ -80,10 +83,28 @@ class Box extends Common
         $where['province'] = isset($input['province']) && !empty($input['province']) ? $input['province'] : '';
         $where['city'] = isset($input['city']) && !empty($input['city']) ? $input['city'] : '';
         $where['area'] = isset($input['area']) && !empty($input['area']) ? $input['area'] : '';
-
         unset($input);
-        $this->assign('curr_pca', json_encode(['province' => $where['province'], 'city' => $where['city'], 'district' => $where['area']]));//默认省市区
-        $this->assign('content', model('box')->houseList($where));
+
+        //$back_result = model('box')->houseList($where, $page, $each_page);
+
+        $list = Db::name('building')
+            ->where(array_filter($where))
+            ->page($page, $each_page)
+            ->select();
+
+        $count = Db::name('building')
+            ->where(array_filter($where))
+            ->count();
+
+        $allpages = intval(ceil($count / $each_page));//计算总页面
+        $this->assign('Nowpage', $page); //当前页
+        $this->assign('allpage', $allpages); //总页数 
+        $this->assign('count', $count);
+
+        if(input('get.page')){
+            return json(['list' => $list, 'allpage' => $allpages, 'count' => $count]);
+        }
+
         return $this->fetch();
     }
 

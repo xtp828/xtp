@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html";i:1510938050;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\menu.html";i:1510924997;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\product\index.html";i:1510977155;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\menu.html";i:1510924997;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -187,7 +187,7 @@ layui.use(['layer', 'common'], function () {
 
         <div id="AjaxPage" style="float: right;margin-top:-10px; "></div>
                 <div class="CountPage" style="float: right;clear:both; margin-right:15px; margin-top:-5px;">
-                    共 <?php echo $count; ?> 条 <span id="allpage"></span>
+                    共 <span id="all_total"><?php echo $count; ?></span> 条 <span id="allpage"></span>
                 </div>
                 <div style="clear:both;"></div>
     </div>

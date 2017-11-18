@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\box\editbox.html";i:1510977330;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\menu.html";i:1510924997;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:53:"F:\ddhz\ddhz-admin\xtp/app/admin\view\box\addbox.html";i:1510977338;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\menu.html";i:1510924997;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -94,18 +94,18 @@ layui.use(['layer', 'common'], function () {
                 <span><?php echo $position['name']; ?></span>
             </div>
             <form  class="layui-form layui-form-pane" id="formrec" method="post" role="form">
-                <input type="hidden" name="id" value="<?php echo $info['id']; ?>">
+
                 <div class="layui-form-item">
                     <label class="layui-form-label">盒子编号</label>
                     <div class="layui-input-inline" style="width: 100px;">
-                        <input class="layui-input" name="number_no" type="text" placeholder="盒子编号" required  lay-verify="name" value="<?php echo $info['number_no']; ?>" readonly>
+                        <input class="layui-input" name="number_no" type="text" placeholder="盒子编号" required  lay-verify="number_no" value="<?php echo $number_no; ?>" readonly>
                     </div>
                 </div>
 
                 <div class="layui-form-item">
                     <label class="layui-form-label">摆放楼层</label>
                     <div class="layui-input-inline" style="width: 80px;">
-                        <input class="layui-input" name="floors" type="text" placeholder="摆放楼层" required  lay-verify="floors" value="<?php echo $info['floors']; ?>">
+                        <input class="layui-input" name="floors" type="text" placeholder="摆放楼层" required  lay-verify="floors">
                     </div>
                 </div>
 
@@ -115,22 +115,22 @@ layui.use(['layer', 'common'], function () {
                         <div class="layui-input-inline" style="width: 60px;">
                             <button class="btn" type="button" id="choice_box" style="width: 100px;"><i class="fa fa-search" aria-hidden="true"></i>  点击选择</button>
                         </div>
-                        <div class="layui-form-mid layui-word-aux" id="address"><?php echo $info['province']; ?>-<?php echo $info['city']; ?>-<?php echo $info['area']; ?>，<?php echo $info['address']; ?>，<?php echo $info['name']; ?></div>
+                        <div class="layui-form-mid layui-word-aux" id="address"></div>
                     </div>
                 </div>
 
                 <div class="layui-form-item">
                     <label class="layui-form-label">状态</label>
                     <div class="layui-input-inline">
-                        <input type="checkbox" <?php if($info['status'] == 1): ?>checked<?php endif; ?> name="status" lay-skin="switch" lay-filter="switchTest" title="开关"><div class="layui-unselect layui-form-switch layui-form-onswitch"><i></i></div>
+                        <input type="checkbox" checked name="status" lay-skin="switch" lay-filter="switchTest" title="开关"><div class="layui-unselect layui-form-switch layui-form-onswitch"><i></i></div>
                     </div>
                 </div>
 
                 <div class="layui-form-item">
                     <label class="layui-form-label"></label>
                     <div class="layui-input-inline">
-                        <input type="hidden"  name="submit_type" value="edit"/>
-                        <input type="hidden"  name="building_id" id="building_id" value="<?php echo $info['building_id']; ?>"/>
+                        <input type="hidden"  name="submit_type" value="add"/>
+                        <input type="hidden"  name="building_id" id="building_id" value=""/>
                         <button class="btn" lay-submit="" lay-filter="add-role" data-href=<?php echo url('editBox'); ?>>提交</button>
                     </div>
                 </div>
@@ -156,6 +156,7 @@ layui.use(['layer', 'common'], function () {
 
         form.verify({
             floors:[/^([-]?[0-9a-zA-Z]+)$/i, '请选择楼层']
+            ,number_no:[/^\d+$/i, '错误的盒子编号']
             ,type:[/^\d+$/, '类型必填且必须为整数']
         });
 

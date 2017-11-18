@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:55:"F:\ddhz\ddhz-admin\xtp/app/admin\view\box\souhouse.html";i:1510924997;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:55:"F:\ddhz\ddhz-admin\xtp/app/admin\view\box\souhouse.html";i:1510976674;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -23,7 +23,7 @@
 <div id="main-container">
     <div class="main_content">
         <div class="layui-form" style="margin-top: 10px;">
-            <form action="<?php echo url('souHouse'); ?>">
+            <form id="form1">
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <label class="layui-form-label sou_lablem">大厦名</label>
@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="layui-input-inline" style="width: 100px;">
-                            <button class="layui-btn layui-btn-lg" lay-submit lay-filter="formDemo">
+                            <button class="layui-btn layui-btn-lg sub_btn" type="button">
                                 <i class="layui-icon">&#xe615;</i>
                                 搜索
                             </button>
@@ -60,37 +60,58 @@
                     <th width="100"><span>操作</span></th>
                 </tr>
                 </thead>
-                <tbody>
-                <?php if(is_array($content['list']) || $content['list'] instanceof \think\Collection || $content['list'] instanceof \think\Paginator): if( count($content['list'])==0 ) : echo "" ;else: foreach($content['list'] as $key=>$v): ?>
-                <tr>
-                    <td><?php echo $v['id']; ?></td>
-                    <td><?php echo $v['name']; ?></td>
-                    <td><?php echo $v['province']; ?>-<?php echo $v['city']; ?>-<?php echo $v['area']; ?></td>
-                    <td><?php echo $v['createtime']; ?></td>
-                    <td>
-                        <?php if($v['status'] == 1): ?>
-                        开放
-                        <?php else: ?>
-                        <span style="color:red;">禁止</span>
-                        <?php endif; ?>
-                    </td>
-                    <td>
-                        <a class="btn ok-choice" data-id="<?php echo $v['id']; ?>" data-info="<?php echo $v['province']; ?>-<?php echo $v['city']; ?>-<?php echo $v['area']; ?>，<?php echo $v['address']; ?>，<?php echo $v['name']; ?>"><i class="fa fa-check-square" aria-hidden="true"></i>&nbsp;确认选择</a>
-                    </td>
-                </tr>
-                <?php endforeach; endif; else: echo "" ;endif; ?>
-                </tbody>
+
+                <script id="arlist" type="text/html">
+                            {{# for(var i=0;i<d.length;i++){  }}
+                            <tr class="long-td">
+                                <td>{{d[i].id}}</td>
+                                <td>{{d[i].name}}</td>
+                                <td>{{d[i].province + '-' + d[i].city + '-' + d[i].area}}</td>
+                                <td>{{d[i].createtime}}</td>
+                                <td>
+                                    {{# if(d[i].status==1){ }}
+                                       开放
+                                    {{# } else { }}
+                                        <span style="color:red;">禁止</span>
+                                    {{# } }}
+                                </td>
+                                <td>
+                                 <a class="btn ok-choice" data-id="{{d[i].id}}" data-info="{{d[i].province + '-' + d[i].city + '-' + d[i].area + '，' + d[i].address + '，' + d[i].name}}"><i class="fa fa-check-square" aria-hidden="true"></i>&nbsp;确认选择</a>
+                                </td>
+                            </tr>
+                            {{# } }}
+                    </script>
+                    <tbody id="article_list"></tbody>
             </table>
+        </div>
+        <div id="AjaxPage" style="float: right;margin-top:-10px; "></div>
+                <div class="CountPage" style="float: right;clear:both; margin-right:15px; margin-top:-5px;">
+                    共 <span id="all_total"><?php echo $count; ?></span> 条 <span id="allpage"></span>
+                </div>
+                <div style="clear:both;"></div>
         </div>
 </div>
 </div>
 <script type="text/javascript">
+    $('#distpicker').distpicker();
+    var laytpl,laypage;
+    var url='<?php echo url("box/souHouse"); ?>';
+    var allpages='<?php echo $allpage; ?>';
+    layui.use(['layer', 'form','laypage','common','laytpl'], function () {
+        var $ = layui.jquery, layer = layui.layer, common = layui.common, form = layui.form();
+        laytpl =layui.laytpl;
+        laypage = layui.laypage;
 
-    $('#distpicker').distpicker(<?php echo $curr_pca; ?>);
+        $('.sub_btn').click(function(){
+            allpages='<?php echo $allpage; ?>';
+            url = '<?php echo url("box/souHouse"); ?>' + '?' + $('#form1').serialize();
+            common.Ajaxpage(1);
+            return false;
+        })
+        
+        common.Ajaxpage();
 
-    layui.use(['layer', 'form'], function () {
-        var $ = layui.jquery
-        $('.ok-choice').click(function(){
+        $('.ok-choice').live('click',function(){
             parent.$('#address').text($(this).data('info'));
             parent.$('#building_id').val($(this).data('id'));
             parent.layer.close(parent.layer.getFrameIndex(window.name));

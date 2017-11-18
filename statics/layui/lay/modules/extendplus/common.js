@@ -38,6 +38,10 @@
                 if(info.list){
                     data = info.list;
                     allpages = info.allpage;
+                    //改变总条数
+                    if($('#all_total').length>0){
+                        $('#all_total').text(info.count);
+                    }
                 }else{
                     data = info;
                 }
@@ -55,7 +59,7 @@
 
                 //重置面板
                 laypage({
-                        cont: $('#AjaxPage'),//容器。值支持id名、原生dom对象，jquery对象,
+                    cont: $('#AjaxPage'),//容器。值支持id名、原生dom对象，jquery对象,
                     pages:allpages,//总页数
                     skip: true,//是否开启跳页
                     skin: '#28b5d6',//分页组件颜色
