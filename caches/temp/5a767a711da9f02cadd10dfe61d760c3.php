@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:52:"F:\ddhz\ddhz-admin\xtp/app/admin\view\box\house.html";i:1511021563;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\menu.html";i:1510924997;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:52:"F:\ddhz\ddhz-admin\xtp/app/admin\view\box\house.html";i:1511061037;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\menu.html";i:1510924997;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -182,7 +182,7 @@ layui.use(['layer', 'common'], function () {
 </div>
 </div>
 <script type="text/javascript">
-    $('#distpicker').distpicker();
+    $('#distpicker').distpicker('reset', true);
 
     var laytpl,laypage;
     var url='<?php echo url("box/House"); ?>';

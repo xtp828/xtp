@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\box\edithouse.html";i:1511022516;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\menu.html";i:1510924997;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\box\edithouse.html";i:1511022556;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;s:54:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\menu.html";i:1510924997;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -97,7 +97,7 @@ layui.use(['layer', 'common'], function () {
                 <input type="hidden" name="id" value="<?php echo $info['id']; ?>">
                 <div class="layui-form-item">
                     <label class="layui-form-label">大厦名</label>
-                    <div class="layui-input-inline" style="width: 100px;">
+                    <div class="layui-input-inline" style="width: 200px;">
                         <input class="layui-input" name="name" type="text" placeholder="大厦名" required  lay-verify="required" value="<?php echo $info['name']; ?>">
                     </div>
                 </div>

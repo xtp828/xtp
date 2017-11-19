@@ -82,6 +82,7 @@ class Box extends Common
         }
 
         $where = array();
+        $where['status'] = 1;
         $where['name'] = isset($input['name']) && !empty($input['name']) ? $input['name'] : '';
         $where['province'] = isset($input['province']) && !empty($input['province']) ? $input['province'] : '';
         $where['city'] = isset($input['city']) && !empty($input['city']) ? $input['city'] : '';

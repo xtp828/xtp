@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:55:"F:\ddhz\ddhz-admin\xtp/app/admin\view\box\souhouse.html";i:1510976674;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:55:"F:\ddhz\ddhz-admin\xtp/app/admin\view\box\souhouse.html";i:1511061029;s:56:"F:\ddhz\ddhz-admin\xtp/app/admin\view\public\header.html";i:1510924997;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -93,7 +93,7 @@
 </div>
 </div>
 <script type="text/javascript">
-    $('#distpicker').distpicker();
+    $('#distpicker').distpicker('reset', true);
     var laytpl,laypage;
     var url='<?php echo url("box/souHouse"); ?>';
     var allpages='<?php echo $allpage; ?>';
